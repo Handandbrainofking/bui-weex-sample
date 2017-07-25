@@ -53,7 +53,7 @@
         data: function () {
             return {
                 leftItem: {
-                    icons: 'icon-back',
+                    icon: 'icon-back',
                 },
                 //当前选择的tab
                 currentTab: "tab1",

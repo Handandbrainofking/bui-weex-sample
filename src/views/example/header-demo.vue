@@ -44,16 +44,16 @@
         data: function () {
             return {
                 leftItem: {
-                    icons: 'icon-back',
+                    icon: 'icon-back'
                 },
                 rightItem: {
                     text: '更多'
                 },
                 rightMenu: {
-                    icons: 'icon-menu'
+                    icon: 'icon-menu'
                 },
                 leftMenu: {
-                    icons: 'icon-back',
+                    icon: 'icon-back',
                     text: '新闻中心'
                 },
                 style1: {
@@ -75,17 +75,11 @@
             "centerclick": function () {
                 buiweex.toast('center')
             }
-        },
-        created: function () {
         }
     }
 </script>
 <style>
     .pdl10 {
         padding-left: 10px;
-    }
-
-    .pdr10 {
-        padding-right: 10px;
     }
 </style>
