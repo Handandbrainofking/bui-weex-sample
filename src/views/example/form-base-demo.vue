@@ -1,20 +1,18 @@
 <template>
     <div>
         <bui-header
-                :title="'表单元素'"
+                title="表单元素"
                 :leftItem="leftItem"
                 @leftClick="back">
         </bui-header>
 
-        <scroller class="bui-container span1 flex-column">
-            <div style="padding-bottom:30px;">
+        <scroller class="span1">
                 <bui-panel title="搜索布局——图标在左边" border="1">
                     <bui-searchbar-left placeholder="请输入数字" @search="onSearch"></bui-searchbar-left>
                 </bui-panel>
                 <bui-panel title="搜索布局——图标在中间" border="1">
                     <bui-searchbar-center  @search="onSearch"></bui-searchbar-center>
                 </bui-panel>
-
 
                 <bui-panel title="单选按钮(bui-radio)——横向布局" border="1">
                     <bui-radio
@@ -44,8 +42,6 @@
                             @change="switchChange"
                     ></bui-switch>
                 </bui-panel>
-
-            </div>
         </scroller>
     </div>
 

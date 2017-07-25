@@ -6,26 +6,24 @@
                 @leftClick="back">
         </bui-header>
 
-        <bui-content class="span1">
-            <list class="bui-list p-r" @loadmore="onLoadmore($event)" loadmoreoffset="2">
-                <!--刷新组件-->
-                <refresh class="bui-refresh" @refresh="onRefresh" @pullingdown="onPullingdown($event)"
-                         :display="refreshing ? 'show' : 'hide'">
-                    <bui-icon :name="refreshIcon" size="40px" style="margin-right: 5px;"></bui-icon>
-                    <text class="bui-refresh-indicator">{{refreshText}}</text>
-                </refresh>
-                <cell class="bui-cell-xlarge" v-for="i in list">
-                    <div class="bui-list-main">
-                        <text class="bui-list-title">第{{i}}行数据</text>
-                    </div>
-                </cell>
-                <!--加载更多-->
-                <loading class="bui-loading" @loading="onLoading" :display="showLoading ? 'show' : 'hide'">
-                    <text class="bui-loading-indicator" v-if="showLoading">{{loadingText}}</text>
-                    <loading-indicator class="bui-indicator"></loading-indicator>
-                </loading>
-            </list>
-        </bui-content>
+        <list class="bui-list" @loadmore="onLoadmore($event)" loadmoreoffset="2">
+            <!--刷新组件-->
+            <refresh class="bui-refresh" @refresh="onRefresh" @pullingdown="onPullingdown($event)"
+                     :display="refreshing ? 'show' : 'hide'">
+                <bui-icon :name="refreshIcon" size="40px" style="margin-right: 5px;"></bui-icon>
+                <text class="bui-refresh-indicator">{{refreshText}}</text>
+            </refresh>
+            <cell class="bui-cell-xlarge" v-for="i in list">
+                <div class="bui-list-main">
+                    <text class="bui-list-title">第{{i}}行数据</text>
+                </div>
+            </cell>
+            <!--加载更多-->
+            <loading class="bui-loading" @loading="onLoading" :display="showLoading ? 'show' : 'hide'">
+                <text class="bui-loading-indicator" v-if="showLoading">{{loadingText}}</text>
+                <loading-indicator class="bui-indicator"></loading-indicator>
+            </loading>
+        </list>
     </div>
 
 </template>
@@ -33,8 +31,6 @@
 <style lang="sass" src="bui-weex/src/css/buiweex.scss"></style>
 
 <script>
-    var icon = "/image/demo.png";
-
     var buiweex = require("bui-weex");
     export default {
         data: function () {
@@ -58,9 +54,6 @@
         methods: {
             "back": function () {
                 buiweex.pop();
-            },
-            "onSwpie": function () {
-                buiweex.toast("swpie event");
             },
             //refresh下拉放手后的文字与图标
             "onRefresh": function (e) {

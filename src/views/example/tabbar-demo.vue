@@ -26,15 +26,12 @@
                     </div>
                 </scroller>
             </bui-tabbar-item>
-
             <bui-tabbar-item tabId="tab2" :currentTab="currentTab">
                 <text>选项卡2</text>
             </bui-tabbar-item>
-
             <bui-tabbar-item tabId="tab3" :currentTab="currentTab">
                 <text>选项卡3</text>
             </bui-tabbar-item>
-
             <bui-tabbar-item tabId="tab4" :currentTab="currentTab">
                 <text>选项卡4</text>
             </bui-tabbar-item>
