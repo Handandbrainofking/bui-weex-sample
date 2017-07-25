@@ -8,11 +8,11 @@
         </bui-header>
 
         <div class="span1">
-            <bui-button value="自定义窗口" @click="open"></bui-button>
+            <bui-button value="打开窗口" @click="open"></bui-button>
         </div>
 
         <!--自定义Dialog-->
-        <bui-dialog  @btnClick="onDialogCallback" :show="showDialog">
+        <bui-dialog  @btnClick="onDialogCallback"  @maskClick="maskClick" :show="showDialog">
             <text>欢迎使用BUI-Weex!</text>
             <text>基于阿里weex构建的一套高质量UI框架</text>
         </bui-dialog>
@@ -28,7 +28,7 @@
         data: function(){
             return {
                 leftItem: {
-                    icons: 'icon-back',
+                    icon: 'icon-back',
                 },
                 showDialog: false
             }
@@ -47,6 +47,10 @@
             "onDialogCallback": function (text) {
                 this.showDialog = false;
                 buiweex.toast(text)
+            },
+            "maskClick":function () {
+                this.showDialog = false;
+                buiweex.toast("close")
             }
         }
     }

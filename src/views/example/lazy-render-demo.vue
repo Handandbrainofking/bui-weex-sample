@@ -15,7 +15,7 @@
                 </bui-panel>
             </bui-lazy-render>
 
-            <bui-lazy-render time='3000'>
+            <bui-lazy-render time='3000' @loaded="onLoad">
                 <bui-panel title="延迟3s出来" type="primary" border="1">
                     <image style="width: 260px;height: 260px;"
                                src="https://img.alicdn.com/tps/TB1z.55OFXXXXcLXXXXXXXXXXXX-560-560.jpg"></image>
@@ -44,6 +44,9 @@
         methods: {
             "back": function () {
                 buiweex.pop();
+            },
+            "onLoad":function () {
+                buiweex.toast("on loaded")
             }
         }
     }
