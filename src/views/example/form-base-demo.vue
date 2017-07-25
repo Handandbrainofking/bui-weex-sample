@@ -8,7 +8,7 @@
 
         <scroller class="span1">
                 <bui-panel title="搜索布局——图标在左边" border="1">
-                    <bui-searchbar-left placeholder="请输入数字" @search="onSearch"></bui-searchbar-left>
+                    <bui-searchbar-left placeholder="请输入关键字" @search="onSearch"></bui-searchbar-left>
                 </bui-panel>
                 <bui-panel title="搜索布局——图标在中间" border="1">
                     <bui-searchbar-center  @search="onSearch"></bui-searchbar-center>

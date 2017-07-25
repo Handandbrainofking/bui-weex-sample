@@ -6,7 +6,7 @@
                 @leftClick="back">
         </bui-header>
 
-        <bui-content class="span1">
+        <div class="span1">
             <list class="bui-list">
                 <cell class="bui-cell" v-for="item in listData" @click="jumpTo(item)">
                     <div class="bui-list-main">
@@ -17,7 +17,7 @@
                     </div>
                 </cell>
             </list>
-        </bui-content>
+        </div>
     </div>
 
 </template>

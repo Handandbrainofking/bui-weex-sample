@@ -6,35 +6,29 @@
                 @leftClick="back">
         </bui-header>
 
-        <div class="bui-container">
-            <div class="bui-panel">
-                <div class="bui-panel-main">
-
-                    <list class="bui-list" style="height:500px;">
-                        <cell class="bui-cell-large" @click="openleft()">
-                            <div class="bui-list-main">
-                                <text class="bui-list-title" ref="sliderdom">左侧滑动栏</text>
-                            </div>
-                            <div class="bui-list-right">
-                                <bui-icon name="icon-go"></bui-icon>
-                            </div>
-                        </cell>
-                        <cell class="bui-cell-large" @click="openright()">
-                            <div class="bui-list-main">
-                                <text class="bui-list-title">右侧滑动栏</text>
-                            </div>
-                            <div class="bui-list-right">
-                                <bui-icon name="icon-go"></bui-icon>
-                            </div>
-                        </cell>
-                    </list>
+        <list class="bui-list" style="height:500px;">
+            <cell class="bui-cell-large" @click="openleft()">
+                <div class="bui-list-main">
+                    <text class="bui-list-title" ref="sliderdom">左侧滑动栏</text>
                 </div>
-            </div>
-        </div>
+                <div class="bui-list-right">
+                    <bui-icon name="icon-go"></bui-icon>
+                </div>
+            </cell>
+            <cell class="bui-cell-large" @click="openright()">
+                <div class="bui-list-main">
+                    <text class="bui-list-title">右侧滑动栏</text>
+                </div>
+                <div class="bui-list-right">
+                    <bui-icon name="icon-go"></bui-icon>
+                </div>
+            </cell>
+        </list>
+
         <!--自定义left-slider-bar-->
         <bui-slider-bar
                 @close="closeSliderBarLeft"
-                :type="'left'"
+                type="left"
                 :show="showBarLeft"
                 ref="leftSliderBar">
             <div class="userBox">
@@ -55,7 +49,7 @@
 
         <bui-slider-bar
                 @close="closeSliderBarRight"
-                :type="'right'"
+                type="right"
                 :show="showBarRight"
                 ref="rightSliderBar">
             <div class="userBox">
@@ -110,19 +104,17 @@
             },
             //打开左侧滑动栏
             "openleft": function () {
-                var _this = this;
                 this.showBarLeft = true;
-                setTimeout(function () {
-                    _this.$refs.leftSliderBar.openBar();
-                }, 1);
+                this.$nextTick(()=>{
+                    this.$refs.leftSliderBar.openBar();
+                })
             },
             //打开右侧滑动栏
             "openright": function () {
-                var _this = this;
                 this.showBarRight = true;
-                setTimeout(function () {
-                    _this.$refs.rightSliderBar.openBar();
-                }, 1);
+                this.$nextTick(()=>{
+                    this.$refs.rightSliderBar.openBar();
+                })
             },
             "closeSliderBarLeft": function () {
                 this.showBarLeft = false;

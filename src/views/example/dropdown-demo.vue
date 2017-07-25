@@ -35,12 +35,11 @@
         </list>
 
         <bui-dropdown
-                :datadrop="newdatas"
                 :show="showDropdown"
                 @close="closeDropdown"
                 ref="dropdown">
             <div class="bui-list">
-                <div class="bui-cell" v-for="item in actionList">
+                <div class="bui-cell" v-for="item in actionList"  @click="closeDropdown">
                     <div class="bui-list-left">
                         <bui-icon :name="item['l-icon']"></bui-icon>
                     </div>
@@ -57,7 +56,7 @@
                 @close="closeDropdown2"
                 ref="dropdown2">
             <div class="bui-list">
-                <div class="bui-cell" v-for="item in actionList">
+                <div class="bui-cell" v-for="item in actionList" @click="closeDropdown2">
                     <div class="bui-list-left">
                         <bui-icon :name="item['l-icon']"></bui-icon>
                     </div>
@@ -74,7 +73,7 @@
                 @close="closeDropdown3"
                 ref="dropdown3">
             <div class="bui-list">
-                <div class="bui-cell" v-for="item in actionList">
+                <div class="bui-cell" v-for="item in actionList"  @click="closeDropdown3">
                     <div class="bui-list-left">
                         <bui-icon :name="item['l-icon']"></bui-icon>
                     </div>
@@ -92,7 +91,7 @@
                 @close="closeDropdown4"
                 ref="dropdown4">
             <div class="bui-list">
-                <div class="bui-cell" v-for="item in actionList">
+                <div class="bui-cell" v-for="item in actionList"  @click="closeDropdown4">
                     <div class="bui-list-left">
                         <bui-icon :name="item['l-icon']"></bui-icon>
                     </div>
@@ -115,7 +114,7 @@
         data: function () {
             return {
                 leftItem: {
-                    icons: 'icon-back'
+                    icon: 'icon-back'
                 },
                 showDropdown: false,
                 showDropdown2: false,
