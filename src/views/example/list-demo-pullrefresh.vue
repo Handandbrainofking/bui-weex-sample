@@ -42,7 +42,7 @@
                 LOADMORE: [7, 8, 9, 9, 10],
                 refreshing: false,
                 showLoading: false,
-                refreshIcon: "icon-todown",
+                refreshIcon: "icon-down",
                 refreshText: "下拉刷新...",
                 loadingText: "加载更多数据...",
                 list: [1, 2, 3, 4, 5],
@@ -73,12 +73,12 @@
             //refresh下拉放手前的文字与图标
             "onPullingdown": function (e) {
                 //默认refresh文字与图标
-                this.refreshIcon = "icon-todown";
+                this.refreshIcon = "icon-down";
                 this.refreshText = "下拉可以刷新...";
                 //下拉一定距离时文字与图标
                 if (Math.abs(e.pullingDistance) > 60) {
                     console.log("松开即可刷新");
-                    this.refreshIcon = "icon-toup";
+                    this.refreshIcon = "icon-top";
                     this.refreshText = "松开即可刷新...";
                 }
             },
