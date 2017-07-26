@@ -7,22 +7,20 @@
                 @leftClick="back">
         </bui-header>
 
-        <bui-content class="span1">
-            <list class="bui-list">
-                <cell class="bui-cell" v-for="item in data" @click="jumpTo(item.url)">
-                    <div class="bui-list-left">
-                        <bui-image width="80px" height="80px" radius="40px" src="/image/demo.png"></bui-image>
-                    </div>
-                    <div class="bui-list-main">
-                        <text class="bui-list-title">{{item.name}}</text>
-                        <text class="bui-list-subtitle">{{item.text}}</text>
-                    </div>
-                    <div class="bui-list-right">
-                        <bui-icon name="icon-go"></bui-icon>
-                    </div>
-                </cell>
-            </list>
-        </bui-content>
+        <list class="bui-list">
+            <cell class="bui-cell" v-for="item in data" @click="jumpTo(item.url)">
+                <div class="bui-list-left">
+                    <bui-image width="80px" height="80px" radius="40px" src="/image/demo.png"></bui-image>
+                </div>
+                <div class="bui-list-main">
+                    <text class="bui-list-title">{{item.name}}</text>
+                    <text class="bui-list-subtitle">{{item.text}}</text>
+                </div>
+                <div class="bui-list-right">
+                    <bui-icon name="icon-go"></bui-icon>
+                </div>
+            </cell>
+        </list>
     </div>
 </template>
 
@@ -65,7 +63,7 @@
         methods: {
             jumpTo: function (file) {
                 if (file) {
-                    buiweex.push(buiweex.getContextPath() + "/" + file, {"name": "yulsh"});
+                    buiweex.push(buiweex.getContextPath() + "/" + file, {"name": "buiweex"});
                 }
             },
             back: function () {
