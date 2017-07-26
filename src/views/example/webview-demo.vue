@@ -1,67 +1,22 @@
 <template>
     <div>
         <bui-header
-                title="浏览器(web)"
+                title="百度一下，你就知道"
                 :leftItem="leftItem"
                 @leftClick="back">
+                <text slot="left" class="close" @click="close">关闭</text>
         </bui-header>
-
         <div class="span1">
-            <div class="flex-row">
-                <bui-button class="ex-btn" type="danger" value="goBack" @click="gobackFunc"></bui-button>
-                <bui-button class="ex-btn" type="success" value="goForward" @click="goforwardFunc"></bui-button>
-                <bui-button class="ex-btn" type="danger" value="reload" @click="reloadFunc"></bui-button>
-            </div>
             <web ref="webview" :src="url" class="webview" @pagestart="start" @pagefinish="finish" @error="error"></web>
         </div>
     </div>
 
 </template>
-
-<style lang="sass" src="bui-weex/src/css/buiweex.scss"></style>
-<script>
-    var webview = weex.requireModule('webview');
-    var buiweex = require("bui-weex");
-    export default {
-        data: function () {
-            return {
-                leftItem: {
-                    icons: 'icon-back',
-                },
-                url: 'https://www.baidu.com'
-            }
-        },
-        components: {},
-        methods: {
-            "back": function () {
-                buiweex.pop();
-            },
-            "gobackFunc": function (event) {
-                buiweex.toast('page url:' + this.url);
-                webview.goBack(this.$refs.webview)
-            },
-            "goforwardFunc": function (event) {
-                buiweex.toast('page url:' + this.url);
-                this.toast('will go goforward');
-                webview.goForward(this.$refs.webview)
-            },
-            "reloadFunc": function (event) {
-                buiweex.toast('reload')
-                webview.reload(this.$refs.webview);
-            },
-            "start": function (event) {
-                buiweex.toast('pagestart')
-            },
-            "finish": function (event) {
-                buiweex.toast('pagefinish')
-            },
-            "error": function (event) {
-                buiweex.toast('error')
-            }
-        }
-    }
-</script>
 <style>
+    .close{
+        font-size: 32px;
+        color: #ffffff;
+    }
     .webview {
         flex: 1;
         height: 750px;
@@ -70,3 +25,39 @@
         border-color: #41B883;
     }
 </style>
+<style lang="sass" src="bui-weex/src/css/buiweex.scss"></style>
+<script>
+    var webview = weex.requireModule('webview');
+    var buiweex = require("bui-weex");
+    export default {
+        data: function () {
+            return {
+                leftItem: {
+                    icon: 'icon-back'
+                },
+                url: 'https://www.baidu.com'
+            }
+        },
+        components: {},
+        methods: {
+            "back": function () {
+                webview.goBack(this.$refs.webview);
+            },
+            "close":function () {
+                buiweex.pop();
+            },
+            "start": function (event) {
+                buiweex.toast('开始加载网页')
+            },
+            "finish": function (event) {
+                buiweex.toast('加载完成')
+            },
+            "error": function (event) {
+                buiweex.toast('出错了')
+            }
+        },
+        mounted:function () {
+
+        }
+    }
+</script>
