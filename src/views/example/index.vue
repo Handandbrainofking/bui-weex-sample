@@ -54,11 +54,11 @@
                     {name: "弹出层(bui-actionsheet)", text: "", url: "actionsheet-demo.weex.js"},
                     {name: "弹出层(bui-dropdown)", text: "", url: "dropdown-demo.weex.js"},
                     {name: "左右侧滑动栏(bui-slider-bar)", text: "", url: "slider-bar-demo.weex.js"},
+                    {name: "延迟加载(bui-lazy-render)", text: "", url: "lazy-render-demo.weex.js"},
+                    {name: "图片轮播(bui-image-slider)", text: "", url: "slider-demo.weex.js"},
                     {name: "滚动组件(Scroller)", text: "", url: "scroller-demo.weex.js"},
-                    {name: "滑动组件(Slider)", text: "", url: "slider-demo.weex.js"},
                     {name: "浏览器(web)", text: "", url: "webview-demo.weex.js"},
-                    {name: "选择器(Picker)", text: "单选Picker,日期时间Picker", url: "picker-demo.weex.js"},
-                    {name: "延迟加载(lazy-render)", text: "内容延迟加载", url: "lazy-render-demo.weex.js"},
+                    {name: "选择器(Picker)", text: "", url: "picker-demo.weex.js"},
                 ]
             }
         },
