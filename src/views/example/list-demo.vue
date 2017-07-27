@@ -1,7 +1,7 @@
 <template>
     <div @viewappear="onappear">
         <bui-header
-                :title="'列表'"
+                title="列表"
                 :leftItem="leftItem"
                 @leftClick="back">
         </bui-header>

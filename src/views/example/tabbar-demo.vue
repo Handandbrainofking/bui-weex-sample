@@ -102,7 +102,7 @@
             },
             //slider 在改变的时候
             "change": function (e) {
-                this.index = e.index;
+                var index = e.index;
                 this.currentTab = this.tabItems[index].tabId;
             }
         }
