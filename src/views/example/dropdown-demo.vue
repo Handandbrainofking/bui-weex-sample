@@ -51,7 +51,7 @@
         </bui-dropdown>
 
         <bui-dropdown
-                :showArrow=true
+                :autowidth=false
                 :show="showDropdown2"
                 @close="closeDropdown2"
                 ref="dropdown2">
@@ -68,7 +68,7 @@
         </bui-dropdown>
 
         <bui-dropdown
-                :showArrow=true
+                :autowidth=false
                 :show="showDropdown3"
                 @close="closeDropdown3"
                 ref="dropdown3">
@@ -85,7 +85,7 @@
         </bui-dropdown>
 
         <bui-dropdown
-                :showArrow=true
+                :autowidth=false
                 :center=true
                 :show="showDropdown4"
                 @close="closeDropdown4"
