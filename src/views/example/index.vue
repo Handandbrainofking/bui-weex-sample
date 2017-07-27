@@ -7,22 +7,20 @@
                 @leftClick="back">
         </bui-header>
 
-        <bui-content class="span1">
-            <list class="bui-list">
-                <cell class="bui-cell" v-for="item in data" @click="jumpTo(item.url)">
-                    <div class="bui-list-left">
-                        <bui-image width="80px" height="80px" radius="40px" src="/image/demo.png"></bui-image>
-                    </div>
-                    <div class="bui-list-main">
-                        <text class="bui-list-title">{{item.name}}</text>
-                        <text class="bui-list-subtitle">{{item.text}}</text>
-                    </div>
-                    <div class="bui-list-right">
-                        <bui-icon name="icon-go"></bui-icon>
-                    </div>
-                </cell>
-            </list>
-        </bui-content>
+        <list class="bui-list">
+            <cell class="bui-cell" v-for="item in data" @click="jumpTo(item.url)">
+                <div class="bui-list-left">
+                    <bui-image width="80px" height="80px" radius="40px" src="/image/demo.png"></bui-image>
+                </div>
+                <div class="bui-list-main">
+                    <text class="bui-list-title">{{item.name}}</text>
+                    <text class="bui-list-subtitle">{{item.text}}</text>
+                </div>
+                <div class="bui-list-right">
+                    <bui-icon name="icon-go"></bui-icon>
+                </div>
+            </cell>
+        </list>
     </div>
 </template>
 
@@ -54,18 +52,18 @@
                     {name: "弹出层(bui-actionsheet)", text: "", url: "actionsheet-demo.weex.js"},
                     {name: "弹出层(bui-dropdown)", text: "", url: "dropdown-demo.weex.js"},
                     {name: "左右侧滑动栏(bui-slider-bar)", text: "", url: "slider-bar-demo.weex.js"},
+                    {name: "延迟加载(bui-lazy-render)", text: "", url: "lazy-render-demo.weex.js"},
+                    {name: "图片轮播(bui-image-slider)", text: "", url: "slider-demo.weex.js"},
                     {name: "滚动组件(Scroller)", text: "", url: "scroller-demo.weex.js"},
-                    {name: "滑动组件(Slider)", text: "", url: "slider-demo.weex.js"},
                     {name: "浏览器(web)", text: "", url: "webview-demo.weex.js"},
-                    {name: "选择器(Picker)", text: "单选Picker,日期时间Picker", url: "picker-demo.weex.js"},
-                    {name: "延迟加载(lazy-render)", text: "内容延迟加载", url: "lazy-render-demo.weex.js"},
+                    {name: "选择器(Picker)", text: "", url: "picker-demo.weex.js"},
                 ]
             }
         },
         methods: {
             jumpTo: function (file) {
                 if (file) {
-                    buiweex.push(buiweex.getContextPath() + "/" + file, {"name": "yulsh"});
+                    buiweex.push(buiweex.getContextPath() + "/" + file, {"name": "buiweex"});
                 }
             },
             back: function () {

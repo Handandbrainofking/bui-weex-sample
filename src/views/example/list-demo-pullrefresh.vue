@@ -6,7 +6,7 @@
                 @leftClick="back">
         </bui-header>
 
-        <list class="bui-list" @loadmore="onLoadmore($event)" loadmoreoffset="2">
+        <list class="bui-list" loadmoreoffset="2">
             <!--刷新组件-->
             <refresh class="bui-refresh" @refresh="onRefresh" @pullingdown="onPullingdown($event)"
                      :display="refreshing ? 'show' : 'hide'">
