@@ -86,11 +86,6 @@
                         title: "销售部",
                         select: false,
                         value: "2"
-                    },
-                    {
-                        title: "行政部",
-                        select: false,
-                        value: "3"
                     }
                 ],
                 "checkboxItems": [
@@ -102,7 +97,27 @@
                     {
                         title: "产品部",
                         select: false,
-                        value: "0"
+                        value: "1"
+                    },
+                    {
+                        title: "销售部",
+                        select: false,
+                        value: "2"
+                    },
+                    {
+                        title: "行政部",
+                        select: false,
+                        value: "3"
+                    },
+                    {
+                        title: "财务部",
+                        select: false,
+                        value: "4"
+                    },
+                    {
+                        title: "人力资源部门",
+                        select: false,
+                        value: "5"
                     }
                 ],
                 "checkboxItems2": [
@@ -114,17 +129,17 @@
                     {
                         title: "产品部",
                         select: false,
-                        value: "0"
+                        value: "1"
                     },
                     {
                         title: "销售部",
                         select: false,
-                        value: "0"
+                        value: "2"
                     },
                     {
                         title: "行政部",
                         select: false,
-                        value: "0"
+                        value: "3"
                     }
                 ]
             }
