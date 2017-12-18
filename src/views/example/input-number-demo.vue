@@ -1,21 +1,20 @@
 <template>
     <div>
         <bui-header
-                title="提示(bui-tip)"
+                title="数字加减（bui-number-input）"
                 :leftItem="leftItem"
                 @leftClick="back">
         </bui-header>
 
-
-        <scroller style="padding:10px;">
-            <bui-tip value="bui-weex success tip."></bui-tip>
-            <bui-tip type="info" value="bui-weex info tip."></bui-tip>
-            <bui-tip type="warning" value="bui-weex warning tip."></bui-tip>
-            <bui-tip type="danger" value="bui-weex 是专门为weex前端开发者打造的高质量UI组件"></bui-tip>
+        <scroller>
+            <bui-cell label="数量" >
+                <bui-number-input v-model="value" step=1 min="-2" max=15 @change="numberChange"></bui-number-input>
+            </bui-cell>
         </scroller>
     </div>
-
 </template>
+
+<style lang="sass" src="bui-weex/src/css/buiweex.scss"></style>
 
 <script>
     export default {
@@ -24,11 +23,15 @@
                 leftItem: {
                     icon: 'ion-chevron-left'
                 },
+                value:4
             }
         },
         methods: {
             back() {
                 this.$pop();
+            },
+            numberChange(value){
+                this.$toast(value);
             }
         }
     }

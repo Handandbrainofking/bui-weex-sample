@@ -1,7 +1,7 @@
 <template>
     <div>
         <bui-header
-                title="头部"
+                title="头部(bui-header)"
                 :leftItem="leftItem"
                 :rightItem="rightItem"
                 @leftClick="back"
@@ -9,29 +9,44 @@
                 @centerClick="centerclick">
         </bui-header>
 
-        <div style="padding: 10px" class="span1">
-            <text class="h4">居中对齐</text>
-            <bui-header :title="'开发者中心'"
-                        :ios=false
+        <scroller style="padding: 10px">
+            <bui-header style="margin-bottom: 20px" :title="'开发者中心'"
+                        backgroundColor="#00cc66"
                         :leftItem="leftItem"
-                        :rightItem="rightMenu"></bui-header>
-
-            <text class="h4">左边对齐</text>
-            <bui-header :ios=false
-                        :styleEx="style1"
-                        :leftItem="leftMenu"
                         :rightItem="rightMenu">
-                <bui-icon slot="right" :name="'icon-search'" size="45px" color="#ffffff" class="pdl10"></bui-icon>
+            </bui-header>
+            <bui-header
+                    style="margin-bottom: 20px"
+                    backgroundColor="#ff9900"
+                    :leftItem="leftMenu"
+                    :rightItem="rightMenu">
+            </bui-header>
+            <bui-header
+                    style="margin-bottom: 20px"
+                    backgroundColor="#ff4e24"
+                    title="新闻标题很长很长很长很长很长"
+                    :leftItem="leftMenu1"
+                    :rightItem="rightMenu1">
             </bui-header>
 
-            <text class="h4">换个颜色</text>
-            <bui-header :ios=false
-                        :styleEx="style2"
-                        :leftItem="leftMenu"
-                        :rightItem="rightMenu">
-                <bui-icon slot="right" :name="'icon-search'" size="45px" color="#ffffff" class="pdl10"></bui-icon>
+            <bui-header
+                    style="margin-bottom: 20px"
+                    backgroundColor="#3399ff"
+                    title=""
+                    :leftItem="leftMenu1"
+                    :rightItem="rightMenu1">
+                <div slot="center" @click="open" style="flex-direction: row;align-items: center">
+                    <text style="color:#ffffff">自定义内容</text>
+                    <bui-icon name="ion-ios-arrow-down" color="#ffffff"></bui-icon>
+                </div>
             </bui-header>
-        </div>
+        </scroller>
+
+        <bui-dropdown v-model="showDropdown" ref="dropdown" center=true>
+           <bui-cell title="娱乐新闻"></bui-cell>
+           <bui-cell title="体育新闻"></bui-cell>
+           <bui-cell title="社交媒体"></bui-cell>
+        </bui-dropdown>
     </div>
 
 </template>
@@ -39,41 +54,45 @@
 <style lang="sass" src="bui-weex/src/css/buiweex.scss"></style>
 
 <script>
-    var buiweex = require("bui-weex");
     export default {
         data: function () {
             return {
+                showDropdown:false,
                 leftItem: {
-                    icon: 'icon-back'
+                    icon: 'ion-chevron-left'
                 },
                 rightItem: {
                     text: '更多'
                 },
                 rightMenu: {
-                    icon: 'icon-menu'
+                    icon: 'ion-navicon-round'
+                },
+                rightMenu1: {
+                    icon: 'ion-android-more-vertical'
                 },
                 leftMenu: {
-                    icon: 'icon-back',
+                    icon: 'ion-chevron-left',
                     text: '新闻中心'
                 },
-                style1: {
-                    'background-color': '#ff4e24',
-                },
-                style2: {
-                    'background-color': '#00c277'
+                leftMenu1: {
+                    icon: 'ion-chevron-left',
+                    text: '返回'
                 }
             }
         },
         methods: {
-            "back": function () {
-                buiweex.pop();
-                buiweex.toast('left')
+            back() {
+                this.$pop();
             },
-            "rightclick": function () {
-                buiweex.toast('right')
+            rightclick() {
+                this.$toast('right')
             },
-            "centerclick": function () {
-                buiweex.toast('center')
+            centerclick() {
+                this.$toast('center');
+            },
+            open(e){
+                this.showDropdown = true;
+                this.$refs.dropdown.show(e);
             }
         }
     }

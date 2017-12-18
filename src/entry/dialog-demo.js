@@ -1,7 +1,7 @@
 import DialogDemo from '../views/example/dialog-demo.vue'
-import mixins from '../js/mixins.js'
+import buiweex from 'bui-weex'
 
-Vue.mixin(mixins);
+Vue.use(buiweex);
 DialogDemo.el="#root";
 new Vue(Vue.util.extend({ el: '#root'}, DialogDemo));
 

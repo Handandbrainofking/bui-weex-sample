@@ -1,7 +1,7 @@
 import TipDemo from '../views/example/tip-demo.vue'
-import mixins from '../js/mixins.js'
+import buiweex from 'bui-weex'
 
-Vue.mixin(mixins);
+Vue.use(buiweex);
 TipDemo.el="#root";
 new Vue(TipDemo);
 

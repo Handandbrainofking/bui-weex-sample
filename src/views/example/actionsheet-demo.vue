@@ -1,20 +1,19 @@
 <template>
-    <div class="p-r span1">
+    <div>
         <bui-header
-                title="弹出ActionSheet"
+                title="上拉菜单(bui-actionsheet)"
                 :leftItem="leftItem"
                 @leftClick="back">
         </bui-header>
 
-        <div class="span1">
-            <bui-button value="弹出" @click="openActionsheet()"></bui-button>
+        <div class="center" style="padding:10px;">
+            <bui-button type="warning" value="上拉菜单" @click="open()"></bui-button>
         </div>
 
         <!--自定义上拉菜单-->
         <bui-actionsheet
                 :items="actionsheetItems"
-                :show="showBar"
-                @close="closeActionsheet"
+                v-model="showBar"
                 @itemClick="actionsheetItemClick"
                 @btnClick="actionsheetBtnClick"
                 ref="actionsheet"
@@ -28,41 +27,30 @@
 
 
 <script>
-    var buiweex = require("bui-weex");
-
     export default {
         data: function () {
             return {
                 leftItem: {
-                    icons: 'icon-back',
+                    icon: 'ion-chevron-left'
                 },
                 showBar: false,
                 actionsheetItems: ['复制文字', '收藏动态']
             }
         },
-        components: {
-            'bui-actionsheet': buiweex.buiActionSheet
-        },
-
         methods: {
             "back": function () {
-                buiweex.pop();
+                this.$pop();
             },
             //打开上拉菜单
-            "openActionsheet": function () {
+            open() {
                 this.showBar = true;
-                this.$nextTick(e=>{
-                    this.$refs.actionsheet.open();
-                });
+                this.$refs.actionsheet.show();
             },
-            "closeActionsheet": function () {
+            actionsheetItemClick(item) {
+                this.$toast(item)
                 this.showBar = false;
             },
-            "actionsheetItemClick": function (item) {
-                buiweex.toast(item)
-                this.showBar = false;
-            },
-            "actionsheetBtnClick": function () {
+            actionsheetBtnClick() {
                 this.showBar = false;
             }
         }

@@ -1,18 +1,16 @@
 <template>
     <div>
-
         <bui-header
-                title="弹出层"
+                title="弹出框(bui-dialog)"
                 :leftItem="leftItem"
                 @leftClick="back">
         </bui-header>
 
-        <div class="span1">
-            <bui-button value="打开窗口" @click="open"></bui-button>
+        <div class="center" style="padding:10px;">
+            <bui-button type="warning" value="打开自定义窗口" @click="open"></bui-button>
         </div>
 
-        <!--自定义Dialog-->
-        <bui-dialog  @btnClick="onDialogCallback"  @maskClick="maskClick" :show="showDialog">
+        <bui-dialog v-model="showDialog" @btnClick="onDialogCallback">
             <text>欢迎使用BUI-Weex!</text>
             <text>基于阿里weex构建的一套高质量UI框架</text>
         </bui-dialog>
@@ -22,35 +20,25 @@
 <style lang="sass" src="bui-weex/src/css/buiweex.scss"></style>
 
 <script>
-    var buiweex = require("bui-weex");
-
     export default {
         data: function(){
             return {
                 leftItem: {
-                    icon: 'icon-back',
+                    icon: 'ion-chevron-left'
                 },
                 showDialog: false
             }
         },
-        components: {
-            'bui-dialog': buiweex.buiDialog
-        },
-
         methods: {
-            "back": function () {
-                buiweex.pop();
+            back() {
+                this.$pop();
             },
-            "open": function () {
+            open() {
                 this.showDialog = true;
             },
-            "onDialogCallback": function (text) {
+            onDialogCallback (text) {
                 this.showDialog = false;
-                buiweex.toast(text)
-            },
-            "maskClick":function () {
-                this.showDialog = false;
-                buiweex.toast("close")
+                this.$toast(text)
             }
         }
     }

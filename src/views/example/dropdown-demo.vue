@@ -1,105 +1,20 @@
 <template>
-    <div class="p-r span1">
+    <div>
         <bui-header
-                title="弹出下拉框"
+                title="下拉菜单(bui-dropdown)"
                 :leftItem="leftItem"
-                @leftClick="back"
-                @centerClick="openDropdown4($event)">
+                @centerClick="centerClick"
+                @leftClick="back">
         </bui-header>
 
-        <list class="bui-list">
-            <cell class="bui-cell" @click="openDropdown($event)">
-                <div class="bui-list-main">
-                    <text class="bui-list-title">自适应点击元素宽度下拉菜单</text>
-                </div>
-                <div class="bui-list-right">
-                    <bui-icon name="icon-go"></bui-icon>
-                </div>
-            </cell>
-            <cell class="bui-cell" @click="openDropdown2($event)">
-                <div class="bui-list-main">
-                    <text class="bui-list-title">默认下拉菜单</text>
-                </div>
-                <div class="bui-list-right">
-                    <bui-icon name="icon-go"></bui-icon>
-                </div>
-            </cell>
-            <cell class="bui-cell-large">
-                <div class="bui-list-main">
-                    <text class="bui-list-title">右边图标下拉菜单</text>
-                </div>
-                <div class="bui-list-right">
-                    <bui-icon name="icon-go" @click="openDropdown3($event)"></bui-icon>
-                </div>
-            </cell>
-        </list>
+        <div class="center" style="padding: 10px">
+            <bui-button type="warning" value="打开下拉菜单" @click="open"></bui-button>
+        </div>
 
-        <bui-dropdown
-                :show="showDropdown"
-                @close="closeDropdown"
-                ref="dropdown">
-            <div class="bui-list">
-                <div class="bui-cell" v-for="item in actionList"  @click="closeDropdown">
-                    <div class="bui-list-left">
-                        <bui-icon :name="item['l-icon']"></bui-icon>
-                    </div>
-                    <div class="bui-list-main">
-                        <text class="bui-list-title">{{item.title}}</text>
-                    </div>
-                </div>
-            </div>
-        </bui-dropdown>
-
-        <bui-dropdown
-                :autowidth=false
-                :show="showDropdown2"
-                @close="closeDropdown2"
-                ref="dropdown2">
-            <div class="bui-list">
-                <div class="bui-cell" v-for="item in actionList" @click="closeDropdown2">
-                    <div class="bui-list-left">
-                        <bui-icon :name="item['l-icon']"></bui-icon>
-                    </div>
-                    <div class="bui-list-main">
-                        <text class="bui-list-title">{{item.title}}</text>
-                    </div>
-                </div>
-            </div>
-        </bui-dropdown>
-
-        <bui-dropdown
-                :autowidth=false
-                :show="showDropdown3"
-                @close="closeDropdown3"
-                ref="dropdown3">
-            <div class="bui-list">
-                <div class="bui-cell" v-for="item in actionList"  @click="closeDropdown3">
-                    <div class="bui-list-left">
-                        <bui-icon :name="item['l-icon']"></bui-icon>
-                    </div>
-                    <div class="bui-list-main">
-                        <text class="bui-list-title">{{item.title}}</text>
-                    </div>
-                </div>
-            </div>
-        </bui-dropdown>
-
-        <bui-dropdown
-                :autowidth=false
-                :center=true
-                :show="showDropdown4"
-                @close="closeDropdown4"
-                ref="dropdown4">
-            <div class="bui-list">
-                <div class="bui-cell" v-for="item in actionList"  @click="closeDropdown4">
-                    <div class="bui-list-left">
-                        <bui-icon :name="item['l-icon']"></bui-icon>
-                    </div>
-                    <div class="bui-list-main">
-                        <text class="bui-list-title">{{item.title}}</text>
-                    </div>
-                </div>
-            </div>
+        <bui-dropdown v-model="showDropdown" ref="dropdown" center=true>
+            <bui-cell title="娱乐新闻"></bui-cell>
+            <bui-cell title="体育新闻"></bui-cell>
+            <bui-cell title="社交媒体"></bui-cell>
         </bui-dropdown>
     </div>
 
@@ -109,76 +24,27 @@
 
 
 <script>
-    var buiweex = require("bui-weex");
     export default {
         data: function () {
             return {
                 leftItem: {
-                    icon: 'icon-back'
+                    icon: 'ion-chevron-left'
                 },
-                showDropdown: false,
-                showDropdown2: false,
-                showDropdown3: false,
-                showDropdown4: false,
-                showLoading: false,
-                actionList: [
-                    {'l-icon': "icon-home", 'title': '在线客服'},
-                    {'l-icon': "icon-user", 'title': 'SherryLee'},
-                    {'l-icon': "icon-msg", 'title': '积分商城'},
-                    {'l-icon': "icon-liwu", 'title': '播云客'}
-                ]
+                showDropdown: false
             }
         },
-        components: {
-            'bui-dropdown': buiweex.buiDropdown
-        },
-
         methods: {
-            "back": function () {
-                buiweex.pop();
+            back () {
+                this.$pop();
             },
-            "openDropdown": function (event) {
+            open(event) {
                 this.showDropdown = true;
-                this.$nextTick(e=>{
-                    this.$refs.dropdown.open(event);
-                })
+                this.$refs.dropdown.show(event);
             },
-            "openDropdown2": function (event) {
-                this.showDropdown2 = true;
-                this.$nextTick(e=>{
-                    this.$refs.dropdown2.open(event);
-                });
-            },
-            "openDropdown3": function (event) {
-                this.showDropdown3 = true;
-                this.$nextTick(e=>{
-                    this.$refs.dropdown3.open(event);
-                });
-            },
-            "openDropdown4": function (event) {
-                this.showDropdown4 = true;
-                this.$nextTick(e=>{
-                    this.$refs.dropdown4.open(event);
-                });
-            },
-            "closeDropdown": function () {
-                this.showDropdown = false;
-            },
-            "closeDropdown2": function () {
-                this.showDropdown2 = false;
-            },
-            "closeDropdown3": function () {
-                this.showDropdown3 = false;
-            },
-            "closeDropdown4": function () {
-                this.showDropdown4 = false;
-            },
-        },
-        mounted () {
-
-        },
-        created: function () {
-
+            centerClick(e){
+                this.showDropdown = true;
+                this.$refs.dropdown.show(e);
+            }
         }
     }
 </script>

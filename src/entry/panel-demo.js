@@ -1,7 +1,7 @@
 import PanelDemo from '../views/example/panel-demo.vue'
-import mixins from '../js/mixins.js'
+import buiweex from 'bui-weex'
 
-Vue.mixin(mixins);
+Vue.use(buiweex);
 PanelDemo.el="#root";
 new Vue(PanelDemo);
 

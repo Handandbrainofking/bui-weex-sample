@@ -7,20 +7,17 @@
     </div>
 </template>
 
-<!--引入bui-weex样式文件-->
 <style lang="sass" src="bui-weex/src/css/buiweex.scss"></style>
 
 <script>
-    //引入bui-weex模块
-    //import buiweex from 'bui-weex'
-    var buiweex = require("bui-weex");
     module.exports = {
         data: function () {
             return {}
         },
         methods: {
-            "jumpTo":function () {
-                buiweex.push(buiweex.getContextPath()+"/index.weex.js")
+            jumpTo () {
+                var url = this.$getContextPath()+"/index.weex.js";
+                this.$push(url);
             }
         },
         components: {},

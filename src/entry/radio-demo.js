@@ -1,4 +1,4 @@
-import App from '../views/example/index.vue'
+import App from '../views/example/radio-demo.vue'
 import buiweex from 'bui-weex'
 
 Vue.use(buiweex);

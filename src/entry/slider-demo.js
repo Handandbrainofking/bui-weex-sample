@@ -1,7 +1,7 @@
 import SliderDemo from '../views/example/slider-demo.vue'
-import mixins from '../js/mixins.js'
+import buiweex from 'bui-weex'
 
-Vue.mixin(mixins);
+Vue.use(buiweex);
 SliderDemo.el="#root";
 new Vue(SliderDemo);
 

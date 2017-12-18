@@ -1,7 +1,7 @@
 import UiControlDemo from '../views/example/actionsheet-demo.vue'
-import mixins from '../js/mixins.js'
+import buiweex from 'bui-weex'
 
-Vue.mixin(mixins);
+Vue.use(buiweex);
 UiControlDemo.el="#root";
 new Vue(UiControlDemo);
 

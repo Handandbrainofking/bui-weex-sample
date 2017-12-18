@@ -1,4 +1,4 @@
-import UiControlDemo from '../views/example/dropdown-demo.vue'
+import UiControlDemo from '../views/example/popup-demo.vue'
 import buiweex from 'bui-weex'
 
 Vue.use(buiweex);

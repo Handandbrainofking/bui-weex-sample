@@ -1,7 +1,7 @@
 import HeaderDemo from '../views/example/header-demo.vue'
-import mixins from '../js/mixins.js'
+import buiweex from 'bui-weex'
 
-Vue.mixin(mixins);
+Vue.use(buiweex);
 HeaderDemo.el="#root";
 new Vue(HeaderDemo);
 

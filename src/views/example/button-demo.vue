@@ -1,44 +1,27 @@
 <template>
     <div>
         <bui-header
-                title="按钮"
+                title="按钮（bui-button）"
                 :leftItem="leftItem"
                 @leftClick="back">
         </bui-header>
 
-        <scroller class="span1" style="padding:10px;">
-            <div style="height:1500px">
-                <text class="h4">颜色配置</text>
-                <bui-button class="ex-btn"></bui-button>
-                <bui-button class="ex-btn" type="primary" value="Primary"></bui-button>
-                <bui-button class="ex-btn" type="success" value="Success"></bui-button>
-                <bui-button class="ex-btn" type="warning" value="Warning"></bui-button>
-                <bui-button class="ex-btn" type="danger" value="Danger"></bui-button>
-                <bui-button class="ex-btn" disabled="true" value="Disabled"></bui-button>
+        <scroller class="center">
+            <bui-button class="ex-btn" value="Normal" @click="btnEvent"></bui-button>
+            <bui-button class="ex-btn" type="highlight" value="Highlight" @click="btnEvent"></bui-button>
+            <bui-button class="ex-btn" type="primary" value="Primary" @click="btnEvent"></bui-button>
+            <bui-button class="ex-btn" type="success" value="Success" @click="btnEvent"></bui-button>
+            <bui-button class="ex-btn" type="warning" value="Warning" @click="btnEvent"></bui-button>
+            <bui-button class="ex-btn" type="danger" value="Danger" @click="btnEvent"></bui-button>
+            <bui-button class="ex-btn" disabled=true   value="Disabled" @click="btnEvent"></bui-button>
+            <bui-button class="ex-btn" type="text" value="Text Button" @click="btnEvent"></bui-button>
 
-                <text class="h4">圆角配置</text>
-                <bui-button class="ex-btn" radius="10px" type="primary" value="圆角矩形按钮(radius='10px')"></bui-button>
+            <bui-button class="ex-btn" value="Button" type="highlight" @click="btnEvent">
+                <bui-icon name="ion-checkmark-circled" color="#EE9900"></bui-icon>
+            </bui-button>
 
-                <text class="h4">横向按钮排列</text>
-                <div class="flex-row">
-                    <bui-button class="ex-btn" type="danger" value="确认删除"></bui-button>
-                    <bui-button class="ex-btn" type="success" value="确认提交"></bui-button>
-                </div>
-
-                <div class="flex-row">
-                    <bui-button class="ex-btn" value="按钮1"></bui-button>
-                    <bui-button class="ex-btn" value="按钮2"></bui-button>
-                    <bui-button class="ex-btn" value="按钮3"></bui-button>
-                    <bui-button class="ex-btn" value="按钮4"></bui-button>
-                </div>
-
-                <text class="h4">按钮事件</text>
-                <bui-button class="ex-btn" radius="10px" @longpress="btnEvent('长按事件')" type="primary"
-                            value="长按(@longpress)"></bui-button>
-                <bui-button class="ex-btn" radius="10px" @click="btnEvent('点击事件')" type="primary"
-                            value="点击(@click)"></bui-button>
-            </div>
-
+            <bui-button class="ex-btn" value="Custom Button" type="highlight" :btnStyle="btnStyle"  @click="btnEvent">
+            </bui-button>
         </scroller>
     </div>
 </template>
@@ -46,31 +29,32 @@
 <style lang="sass" src="bui-weex/src/css/buiweex.scss"></style>
 
 <style>
-    .ex-btn{
-        margin-top:10px;
+    .ex-btn {
+        margin-top: 20px;
     }
 </style>
 
 <script>
-    var buiweex = require("bui-weex");
     export default {
         data: function () {
             return {
                 leftItem: {
-                    icons: 'icon-back',
+                    icon: 'ion-chevron-left'
+                },
+                btnStyle:{
+                    width:300,
+                    backgroundColor:'#f3f2f23',
+                    'backgroundColor:active':'#f6f2f23'
                 }
             }
         },
         methods: {
-            "back": function () {
-                buiweex.pop();
+            back() {
+                this.$pop();
             },
-            "btnEvent": function (msg) {
-                buiweex.toast(msg);
+            btnEvent(e) {
+                this.$toast("button click");
             }
-        },
-        mounted:function () {
-
         }
     }
 </script>

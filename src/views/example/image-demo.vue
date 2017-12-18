@@ -1,75 +1,49 @@
 <template>
     <div>
         <bui-header
-                title="图片"
+                title="图片(bui-image)"
                 :leftItem="leftItem"
                 @leftClick="back">
         </bui-header>
 
 
-        <scroller class="span1" style="padding: 10px">
-            <div style="height: 2500px">
-                <text class="h4">加载远程图片</text>
-                <bui-image width="260px" height="260px" @load="onLoad()"
-                           src="https://img.alicdn.com/tps/TB1z.55OFXXXXcLXXXXXXXXXXXX-560-560.jpg"></bui-image>
+        <scroller class="center">
+            <text class="h4">远程图片</text>
+            <bui-image width="260px" height="260px" :src="remote_pic"></bui-image>
 
-                <text class="h4">加载工程目录的图片(固定放在image目录下)</text>
-                <bui-image src="/image/demo.png" width="300px" height="300px"></bui-image>
-                <text class="h4">使用placeholder</text>
-                <bui-image width="260px" placeholder="/image/demo.png" height="260px" @load="onLoad()"
-                           src="https://img.alicdn.1com/tps/TB1z.55OFXXXXcLXXXXXXXXXXXX-560-5601.jpg"></bui-image>
-                <text class="h4">圆角图片(radius="30px")</text>
-                <bui-image width="560px" height="560px"
-                           radius="30px"
-                           src="https://img.alicdn.com/tps/TB1z.55OFXXXXcLXXXXXXXXXXXX-560-560.jpg"></bui-image>
-                <text class="h4">实现background-image的效果</text>
+            <text class="h4">工程目录的图片(固定放在/image/)</text>
+            <bui-image src="/image/demo.png" width="260px" height="260px"></bui-image>
 
-                <div>
-                    <bui-image width="750px" height="750px"
-                               src="https://img.alicdn.com/tps/TB1z.55OFXXXXcLXXXXXXXXXXXX-560-560.jpg"></bui-image>
-                    <div class="title">
-                        <text style="font-size:50px; color: #ff0000">Hello，Bui-Weex.</text>
-                    </div>
-                </div>
+            <text class="h4">使用placeholder，加载默认图片</text>
+            <bui-image width="260px" placeholder="/image/demo.png" height="260px" @load="onLoad()" :src="remote_no_pic"></bui-image>
 
-            </div>
+            <text class="h4">圆角图片(radius="30px")</text>
+            <bui-image width="260px" height="260px" radius="30px" :src="remote_pic"></bui-image>
+
         </scroller>
     </div>
 </template>
 
 <style lang="sass" src="bui-weex/src/css/buiweex.scss"></style>
 
-
 <script>
-    const dom = weex.requireModule('dom');
-    var buiweex = require("bui-weex");
     export default {
-        data: function () {
+        data () {
             return {
                 leftItem: {
-                    icons: 'icon-back'
-                }
+                    icon: 'ion-chevron-left'
+                },
+                remote_pic:"https://img.alicdn.com/tps/TB1z.55OFXXXXcLXXXXXXXXXXXX-560-560.jpg",
+                remote_no_pic:"https://img.alicdn.com/tps/picture.jpg"
             }
         },
-        components: {},
         methods: {
-            "back": function () {
-                buiweex.pop();
+            back () {
+                this.$pop()
             },
-            "onLoad": function (e) {
-                buiweex.toast("image load finished.");
-            },
-            "imgClick": function () {
-
+            onLoad(e) {
+                this.$toast("image load finished.");
             }
         }
     }
 </script>
-
-<style>
-    .title {
-        position: absolute;
-        top: 50px;
-        left: 10px;
-    }
-</style>

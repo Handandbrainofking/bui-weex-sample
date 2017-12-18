@@ -1,7 +1,8 @@
-import ButtonDemo from '../views/example/button-demo.vue'
-import mixins from '../js/mixins.js'
+import App from '../views/example/button-demo.vue'
+import buiweex from 'bui-weex'
 
-Vue.mixin(mixins);
-ButtonDemo.el="#root";
-new Vue(ButtonDemo);
+Vue.use(buiweex);
 
+App.el = '#root'
+
+new Vue(App)

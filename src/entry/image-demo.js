@@ -1,7 +1,7 @@
 import ImageDemo from '../views/example/image-demo.vue'
-import mixins from '../js/mixins.js'
+import buiweex from 'bui-weex'
 
-Vue.mixin(mixins);
+Vue.use(buiweex);
 ImageDemo.el="#root";
 new Vue(ImageDemo);
 

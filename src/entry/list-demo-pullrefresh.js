@@ -1,7 +1,7 @@
 import ListDemo from '../views/example/list-demo-pullrefresh.vue'
-import mixins from '../js/mixins.js'
+import buiweex from 'bui-weex'
 
-Vue.mixin(mixins);
+Vue.use(buiweex);
 ListDemo.el="#root";
 new Vue(ListDemo);
 

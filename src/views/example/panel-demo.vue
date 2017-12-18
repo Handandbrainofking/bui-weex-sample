@@ -1,13 +1,12 @@
 <template>
-    <div @viewappear="onappear">
+    <div>
         <bui-header
-                title="面板"
+                title="面板(bui-panel)"
                 :leftItem="leftItem"
                 @leftClick="back">
         </bui-header>
 
-        <scroller class="span1" style="padding: 10px;">
-            <div style="height: 1200px">
+        <scroller>
                 <bui-panel title="Default Panel" border="1">
                     <text>Default Panel</text>
                     <text>Default Panel</text>
@@ -29,30 +28,23 @@
                 <bui-panel title="Danger Panel" type="danger" border="1">
                     <text>Danger Panel</text>
                 </bui-panel>
-            </div>
         </scroller>
     </div>
 
 </template>
 
-<style lang="sass" src="bui-weex/src/css/buiweex.scss"></style>
-
 <script>
-    var buiweex = require("bui-weex");
     export default {
         data: function () {
             return {
                 leftItem: {
-                    icons: 'icon-back'
+                    icon: 'ion-chevron-left'
                 },
             }
         },
-        components: {
-            'bui-panel': buiweex.buiPanel
-        },
         methods: {
-            "back": function () {
-                buiweex.pop();
+            back() {
+                this.$pop();
             }
         }
     }

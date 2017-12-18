@@ -1,11 +1,10 @@
 <template>
-    <div @viewappear="onappear">
+    <div>
         <bui-header
-                title="图片轮播"
+                title="轮播图片(bui-image-slider)"
                 :leftItem="leftItem"
                 @leftClick="back">
         </bui-header>
-
 
         <bui-image-slider :items="itemList" @itemClick="onItemClick" @change="onChange">
         </bui-image-slider>
@@ -17,12 +16,11 @@
 <style lang="sass" src="bui-weex/src/css/buiweex.scss"></style>
 
 <script>
-    var buiweex = require("bui-weex");
     export default {
         data: function () {
             return {
                 leftItem: {
-                    icons: 'icon-back',
+                    icon: 'ion-chevron-left'
                 },
                 itemList: [
                     {
@@ -40,17 +38,14 @@
                 ]
             }
         },
-        components: {
-            "bui-image-slider": buiweex.buiImageSlider
-        },
         methods: {
-            "back": function () {
-                buiweex.pop();
+            back () {
+                this.$pop();
             },
-            "onChange": function (e) {
+            onChange(e) {
                 console.log(e);
             },
-            "onItemClick": function (e, index) {
+            onItemClick(e, index) {
                 console.log(index);
                 console.log(e);
             }

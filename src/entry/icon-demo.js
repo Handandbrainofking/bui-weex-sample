@@ -1,7 +1,7 @@
 import IconDemo from '../views/example/icon-demo.vue'
-import mixins from '../js/mixins.js'
+import buiweex from 'bui-weex'
 
-Vue.mixin(mixins);
+Vue.use(buiweex);
 IconDemo.el="#root";
 new Vue(IconDemo);
 

@@ -1,7 +1,7 @@
-import TabbarDemo from '../views/example/tabbar-demo.vue'
-import mixins from '../js/mixins.js'
+import SliderDemo from '../views/example/tabbar-demo.vue'
+import buiweex from 'bui-weex'
 
-Vue.mixin(mixins);
-TabbarDemo.el="#root";
-new Vue(TabbarDemo);
+Vue.use(buiweex);
+SliderDemo.el="#root";
+new Vue(SliderDemo);
 
