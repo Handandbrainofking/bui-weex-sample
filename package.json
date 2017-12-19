@@ -27,9 +27,9 @@
     "serve": "node build/init.js && serve -p $npm_package_ports_serverPort",
     "debug": "weex-devtool",
     "publish": "node build/publish.js",
-    "build": "webpack"
   },
   "dependencies": {
+    "archiver": "^2.1.0",
     "bui-weex": "^0.2.0",
     "glob": "^7.1.2",
     "punycode": "^2.1.0",
