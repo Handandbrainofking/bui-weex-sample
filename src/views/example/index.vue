@@ -2,7 +2,6 @@
     <div>
         <bui-header title="BUI-Sample" :leftItem="leftItem" @leftClick="back">
         </bui-header>
-
         <scroller>
             <catalog title="Layout"></catalog>
             <bui-cell @cellClick="jumpTo(item.url)" :title="item.name" :key="index" v-for="(item,index) in layout">

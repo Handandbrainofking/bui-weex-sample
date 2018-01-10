@@ -39,10 +39,9 @@ function getBaseConfig() {
                 {
                     test: /\.js$/,
                     loader: 'babel',
-                    exclude: /node_modules/
                 }, {
                     test: /\.vue(\?[^?]+)?$/,
-                    loaders: []
+                    loaders: ['babel']
                 }, {
                     test: /\.scss$/,
                     loader: 'style!css!sass'
@@ -67,4 +66,4 @@ var weexConfig = getBaseConfig();
 weexConfig.output.filename = '[name].weex.js';
 weexConfig.module.loaders[1].loaders.push('weex');
 
-module.exports = [webConfig, weexConfig];
+module.exports = [weexConfig];

@@ -22,7 +22,6 @@
         },
         components: {},
         mounted: function () {
-
         }
     }
 </script>
