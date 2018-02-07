@@ -13,10 +13,9 @@
         <!--自定义上拉菜单-->
         <bui-actionsheet
                 :items="actionsheetItems"
-                v-model="showBar"
+                v-model="showAction"
                 @itemClick="actionsheetItemClick"
                 @btnClick="actionsheetBtnClick"
-                ref="actionsheet"
         ></bui-actionsheet>
 
     </div>
@@ -33,25 +32,24 @@
                 leftItem: {
                     icon: 'ion-chevron-left'
                 },
-                showBar: false,
+                showAction: false,
                 actionsheetItems: ['复制文字', '收藏动态']
             }
         },
         methods: {
-            "back": function () {
+            back () {
                 this.$pop();
             },
             //打开上拉菜单
             open() {
-                this.showBar = true;
-                this.$refs.actionsheet.show();
+                this.showAction = true;
             },
-            actionsheetItemClick(item) {
-                this.$toast(item)
-                this.showBar = false;
+            actionsheetItemClick(item,index) {
+                this.$toast(item+index)
+                this.showAction = false;
             },
             actionsheetBtnClick() {
-                this.showBar = false;
+                this.showAction = false;
             }
         }
     }

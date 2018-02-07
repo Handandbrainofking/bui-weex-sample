@@ -13,19 +13,19 @@
             <bui-button class="ex-btn" type="warning" value="右边弹出" @click="open4()"></bui-button>
         </div>
 
-        <bui-popup :show="showPopup1" height="300" @maskClick="onMaskClick">
+        <bui-popup v-model="showPopup1" height="300">
             <text class="h4">下方弹出内容</text>
         </bui-popup>
 
-        <bui-popup :show="showPopup2" pos="top" backgroundColor="#ff9900" height="300" @maskClick="onMaskClick">
+        <bui-popup v-model="showPopup2" pos="top" backgroundColor="#ff9900" height="300">
             <text class="h4">上面弹出内容</text>
         </bui-popup>
 
-        <bui-popup :show="showPopup3" pos="left" backgroundColor="#ff4e24" width="300" @maskClick="onMaskClick">
+        <bui-popup v-model="showPopup3" pos="left" backgroundColor="#ff4e24" width="300">
             <text class="h4">左边弹出内容</text>
         </bui-popup>
 
-        <bui-popup :show="showPopup4" pos="right" width="300" @maskClick="onMaskClick">
+        <bui-popup v-model="showPopup4" pos="right" width="300">
             <text class="h4">右边弹出内容</text>
         </bui-popup>
     </div>
@@ -54,10 +54,9 @@
             }
         },
         methods: {
-            "back": function () {
+            back() {
                 this.$pop();
             },
-            //打开上拉菜单
             open1() {
                 this.showPopup1 = true;
             },
@@ -69,14 +68,7 @@
             },
             open4() {
                 this.showPopup4 = true;
-            },
-            onMaskClick(){
-                this.showPopup1 = false;
-                this.showPopup2 = false;
-                this.showPopup3 = false;
-                this.showPopup4 = false;
             }
-
         }
     }
 </script>

@@ -8,9 +8,9 @@
 
         <div style="padding: 10px">
             <text class="h4">横向多选</text>
-            <bui-checkbox :items="items"></bui-checkbox>
+            <bui-checkbox v-model="selectedValue" :items="items"></bui-checkbox>
             <text class="h4">垂直多选</text>
-            <bui-checkbox direction="vertical" :items="items"></bui-checkbox>
+            <bui-checkbox v-model="selectedValue" @change="changeValue"  direction="vertical" :items="items"></bui-checkbox>
         </div>
     </div>
 </template>
@@ -28,17 +28,21 @@
                 leftItem: {
                     icon: 'ion-chevron-left'
                 },
+                selectedValue:["1","2"],
                 items:[
-                    {key:1,title:'全部',select:true},
-                    {key:2,title:'选项一',select:false},
-                    {key:3,title:'选项二',select:false},
-                    {key:4,title:'选项三',select:false}
+                    {value:"1",title:'全部'},
+                    {value:"2",title:'选项一'},
+                    {value:"3",title:'选项二'},
+                    {value:"4",title:'选项三'}
                 ]
             }
         },
         methods: {
             back() {
                 this.$pop();
+            },
+            changeValue(value){
+                this.$toast(JSON.stringify(value));
             }
         }
     }

@@ -17,7 +17,7 @@
 
 <script>
     export default {
-        data: function () {
+        data () {
             return {
                 leftItem: {
                     icon: 'ion-chevron-left'
@@ -46,8 +46,7 @@
                 console.log(e);
             },
             onItemClick(e, index) {
-                console.log(index);
-                console.log(e);
+                this.$toast(index);
             }
         }
     }

@@ -10,6 +10,8 @@
 <style lang="sass" src="bui-weex/src/css/buiweex.scss"></style>
 
 <script>
+    const globalEvent = weex.requireModule('globalEvent');
+
     module.exports = {
         data: function () {
             return {}
@@ -22,6 +24,9 @@
         },
         components: {},
         mounted: function () {
+            globalEvent.addEventListener("androidback", function (e) {
+                this.$pop();
+            });
         }
     }
 </script>

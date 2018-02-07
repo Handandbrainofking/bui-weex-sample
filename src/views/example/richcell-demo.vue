@@ -5,9 +5,12 @@
                 :leftItem="leftItem"
                 @leftClick="back">
         </bui-header>
-        <scroller style="padding:10px;height: 110px">
+
+        <div style="width:500px">
             <bui-richcell :content='content' @click="richClick"></bui-richcell>
-        </scroller>
+        </div>
+
+
     </div>
 
 </template>
@@ -54,7 +57,7 @@
                     },
                     {
                         type: 'text',
-                        value: '未来信息化建设的高度我们成为行业领头羊的关键！'
+                        value: '未来信息化建设的高度我们成为行业领头羊的关键未来信息化建设的高度我们成为行业领头羊的关键！'
                     },
                 ]
             }

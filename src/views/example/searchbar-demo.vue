@@ -8,9 +8,9 @@
 
         <div>
             <text class="h4">类型1</text>
-            <bui-searchbar-center @search="onSearch"></bui-searchbar-center>
+            <bui-searchbar-center @search="onSearch" @focus="onfocus()" @blur="onblur()" @clear="onclear()"></bui-searchbar-center>
             <text class="h4">类型2</text>
-            <bui-searchbar-left @search="onSearch"></bui-searchbar-left>
+            <bui-searchbar-left @search="onSearch" :autofocus=true></bui-searchbar-left>
         </div>
     </div>
 </template>
@@ -27,13 +27,7 @@
             return {
                 leftItem: {
                     icon: 'ion-chevron-left'
-                },
-                items:[
-                    {key:1,title:'全部',select:true},
-                    {key:2,title:'选项一',select:false},
-                    {key:3,title:'选项二',select:false},
-                    {key:4,title:'选项三',select:false}
-                ]
+                }
             }
         },
         methods: {
@@ -42,6 +36,15 @@
             },
             onSearch(value){
                 this.$toast(value);
+            },
+            onfocus(e){
+                 this.$toast("focus");
+            },
+            onblur(e){
+                this.$toast("blur");
+            },
+            onclear(){
+                this.$toast("clear");
             }
         }
     }

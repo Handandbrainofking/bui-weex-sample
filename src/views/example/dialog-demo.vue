@@ -12,7 +12,7 @@
 
         <bui-dialog v-model="showDialog" @btnClick="onDialogCallback">
             <text>欢迎使用BUI-Weex!</text>
-            <text>基于阿里weex构建的一套高质量UI框架</text>
+            <text>基于weex构建的一套高质量UI框架</text>
         </bui-dialog>
     </div>
 </template>
