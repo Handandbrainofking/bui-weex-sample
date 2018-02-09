@@ -5,14 +5,10 @@
                 :leftItem="leftItem"
                 @leftClick="back">
         </bui-header>
-
-        <div style="width:500px">
+        <div style="padding:10px;">
             <bui-richcell :content='content' @click="richClick"></bui-richcell>
         </div>
-
-
     </div>
-
 </template>
 
 <script>
@@ -22,44 +18,7 @@
                 leftItem: {
                     icon: 'ion-chevron-left'
                 },
-                content:[
-                    {
-                        type: 'text',
-                        value: '@张指导',
-                        theme: 'blue',
-                    },
-                    {
-                        type: 'text',
-                        value: '今天去深圳市局开会,与会人数近30人，领导人'
-                    },
-                    {
-                        type: 'text',
-                        value: '@鲁琳',
-                        theme: 'blue'
-                    },
-                    {
-                        type: 'text',
-                        value: '局长对此系统高度重视,请加快'
-                    },
-                    {
-                        type: 'text',
-                        value: '#云指挥系统#',
-                        theme: 'red',
-                    },
-                    {
-                        type: 'text',
-                        value: '项目建设'
-                    },
-                    {
-                        type:'icon',
-                        icon:'ion-checkmark-circled',
-                        color:'red',
-                    },
-                    {
-                        type: 'text',
-                        value: '未来信息化建设的高度我们成为行业领头羊的关键未来信息化建设的高度我们成为行业领头羊的关键！'
-                    },
-                ]
+                content:[]
             }
         },
         methods: {
@@ -69,6 +28,40 @@
             richClick(e,obj){
                 this.$toast(JSON.stringify(obj));
             }
+        },
+        mounted(){
+            var content=[];
+            //第一段
+            content.push({
+                        type: 'text',
+                        value: '@张指导',
+                        theme: 'blue',
+            });
+            //第二段
+            var text="今天去深圳市局开会,与会人数近30人";
+            for(var i=0;i<text.length;i++){
+                var obj={
+                    type:'text',
+                    value:text.charAt(i)
+                }
+                content.push(obj);
+            }
+            //第三段
+            content.push({
+                type:'text',
+                value:"@张无忌",
+                theme:"red"
+            });
+            //第四段
+            text="务必在年前抓紧完成云智慧系统的建设";
+            for(var i=0;i<text.length;i++){
+                var obj={
+                    type:'text',
+                    value:text.charAt(i)
+                }
+                content.push(obj);
+            }
+            this.content=content;
         }
     }
 </script>
