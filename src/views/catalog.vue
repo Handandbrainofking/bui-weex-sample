@@ -6,8 +6,7 @@
 <style>
     .catalog {
         height: 80px;
-        flex:1;
-        background-color: antiquewhite;
+        background-color: #FAEBD7;
         padding-left: 20px;
         justify-content: center;
     }
