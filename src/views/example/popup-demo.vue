@@ -14,7 +14,10 @@
         </div>
 
         <bui-popup v-model="showPopup1" height="300">
-            <text class="h4">下方弹出内容</text>
+            <scroller>
+                <bui-checkbox-cell v-model="selectedValue" @change="changeValue"  direction="vertical" :items="items"></bui-checkbox-cell>
+                <text class="h4">下方弹出内容</text>
+            </scroller>
         </bui-popup>
 
         <bui-popup v-model="showPopup2" pos="top" backgroundColor="#ff9900" height="300">
@@ -51,6 +54,13 @@
                 showPopup2: false,
                 showPopup3: false,
                 showPopup4: false,
+                selectedValue:["1","2"],
+                items:[
+                    {value:"1",title:'全部1'},
+                    {value:"2",title:'选项一'},
+                    {value:"3",title:'选项二'},
+                    {value:"4",title:'选项三'}
+                ]
             }
         },
         methods: {
@@ -68,6 +78,9 @@
             },
             open4() {
                 this.showPopup4 = true;
+            },
+            changeValue(value){
+                this.$toast(JSON.stringify(value));
             }
         }
     }
