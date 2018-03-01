@@ -31,6 +31,7 @@
 
 <script>
     import catalog from '../catalog.vue';
+    const globalEvent = weex.requireModule('globalEvent');
     module.exports = {
         data: function () {
             return {
@@ -84,6 +85,11 @@
             back () {
                 this.$pop();
             }
+        },
+        mounted: function () {
+            globalEvent.addEventListener("androidback",(e)=> {
+                this.$pop();
+            });
         }
     }
 </script>
