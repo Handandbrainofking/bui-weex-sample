@@ -13,7 +13,7 @@
                 <text style="margin-top: 50px;" class="h4">垂直多选(右边文字)</text>
                 <bui-checkbox v-model="selectedValue" @change="changeValue"  direction="vertical" :items="items"></bui-checkbox>
                 <text style="margin-top: 50px;" class="h4">垂直多选(左边文字)</text>
-                <bui-checkbox-cell v-model="selectedValue" @change="changeValue" :items="items"></bui-checkbox-cell>
+                <bui-checkbox-list v-model="selectedValue" @change="changeValue" :items="items"></bui-checkbox-list>
                 <text style="margin-top: 50px;" class="h4">多选场景案例</text>
                 <text style="text-align: center;background-color: #ff9900;padding: 30px;border-radius: 10px;color: #fff;" @click="open1()">弹出层多选列表</text>
             </scroller>
@@ -24,7 +24,7 @@
                     <text style="flex: 9;font-size:30px;color: #888888">请选择下列选择</text>
                     <text style="margin-bottom: 20px;flex: 1;text-align: right;color: #03A9F4" @click="confirm">确定</text>
                 </div>
-                <bui-checkbox-cell v-model="selectedValue" @change="changeValue" :items="items"></bui-checkbox-cell>
+                <bui-checkbox-list v-model="selectedValue" @change="changeValue" :items="items"></bui-checkbox-list>
             </scroller>
         </bui-popup>
     </div>
