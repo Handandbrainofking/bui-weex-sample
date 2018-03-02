@@ -6,12 +6,27 @@
                 @leftClick="back">
         </bui-header>
 
-        <div style="padding: 10px">
-            <text class="h4">横向多选</text>
-            <bui-checkbox v-model="selectedValue" :items="items"></bui-checkbox>
-            <text class="h4">垂直多选</text>
-            <bui-checkbox v-model="selectedValue" @change="changeValue"  direction="vertical" :items="items"></bui-checkbox>
+        <div style="padding: 10px;flex: 1">
+            <scroller>
+                <text class="h4">横向多选</text>
+                <bui-checkbox v-model="selectedValue" :items="items"></bui-checkbox>
+                <text style="margin-top: 50px;" class="h4">垂直多选(右边文字)</text>
+                <bui-checkbox v-model="selectedValue" @change="changeValue"  direction="vertical" :items="items"></bui-checkbox>
+                <text style="margin-top: 50px;" class="h4">垂直多选(左边文字)</text>
+                <bui-checkbox-cell v-model="selectedValue" @change="changeValue" :items="items"></bui-checkbox-cell>
+                <text style="margin-top: 50px;" class="h4">多选场景案例</text>
+                <text style="text-align: center;background-color: #ff9900;padding: 30px;border-radius: 10px;color: #fff;" @click="open1()">弹出层多选列表</text>
+            </scroller>
         </div>
+        <bui-popup v-model="showPopup1" height="400">
+            <scroller style="padding: 20px;">
+                <div style="flex-direction: row;">
+                    <text style="flex: 9;font-size:30px;color: #888888">请选择下列选择</text>
+                    <text style="margin-bottom: 20px;flex: 1;text-align: right;color: #03A9F4" @click="confirm">确定</text>
+                </div>
+                <bui-checkbox-cell v-model="selectedValue" @change="changeValue" :items="items"></bui-checkbox-cell>
+            </scroller>
+        </bui-popup>
     </div>
 </template>
 
@@ -28,6 +43,8 @@
                 leftItem: {
                     icon: 'ion-chevron-left'
                 },
+                showPopup1: false,
+                changevalue: '',
                 selectedValue:["1","2"],
                 items:[
                     {value:"1",title:'全部'},
@@ -41,8 +58,17 @@
             back() {
                 this.$pop();
             },
+            open1() {
+                this.showPopup1 = true;
+                this.changevalue = this.selectedValue;
+            },
             changeValue(value){
+                this.changevalue = value;
                 this.$toast(JSON.stringify(value));
+            },
+            confirm(){
+                this.$toast(JSON.stringify(this.changevalue));
+                this.showPopup1 = false;
             }
         }
     }

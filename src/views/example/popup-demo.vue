@@ -14,7 +14,7 @@
         </div>
 
         <bui-popup v-model="showPopup1" height="300">
-            <scroller>
+            <scroller style="padding: 20px;">
                 <bui-checkbox-cell v-model="selectedValue" @change="changeValue"  direction="vertical" :items="items"></bui-checkbox-cell>
                 <text class="h4">下方弹出内容</text>
             </scroller>

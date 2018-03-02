@@ -55,7 +55,6 @@
                     {name: "单元格(bui-cell)", text: "", url: "cell-demo.weex.js"},
                     {name: "单选(bui-radio)", text: "", url: "radio-demo.weex.js"},
                     {name: "多选(bui-checkbox)", text: "", url: "checkbox-demo.weex.js"},
-                    {name: "多选(bui-checkbox-cell)", text: "", url: "checkbox-cell-demo.weex.js"},
                     {name: "数字加减(bui-number-input)", text: "", url: "input-number-demo.weex.js"},
                 ],
                 popup:[
