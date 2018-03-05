@@ -21,7 +21,7 @@
         <bui-popup v-model="showPopup1" height="400">
             <scroller style="padding: 20px;">
                 <div style="flex-direction: row;">
-                    <text style="flex: 9;font-size:30px;color: #888888">请选择下列选择</text>
+                    <text style="flex: 9;font-size:30px;color: #888888">请选择下列选项</text>
                     <text style="margin-bottom: 20px;flex: 1;text-align: right;color: #03A9F4" @click="confirm">确定</text>
                 </div>
                 <bui-checkbox-list v-model="selectedValue" @change="changeValue" :items="items"></bui-checkbox-list>
