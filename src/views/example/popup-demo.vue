@@ -14,10 +14,7 @@
         </div>
 
         <bui-popup v-model="showPopup1" height="300">
-            <scroller style="padding: 20px;">
-                <bui-checkbox-cell v-model="selectedValue" @change="changeValue"  direction="vertical" :items="items"></bui-checkbox-cell>
-                <text class="h4">下方弹出内容</text>
-            </scroller>
+            <text class="h4">下方弹出内容</text>
         </bui-popup>
 
         <bui-popup v-model="showPopup2" pos="top" backgroundColor="#ff9900" height="300">
@@ -78,9 +75,6 @@
             },
             open4() {
                 this.showPopup4 = true;
-            },
-            changeValue(value){
-                this.$toast(JSON.stringify(value));
             }
         }
     }

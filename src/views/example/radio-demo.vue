@@ -6,12 +6,27 @@
                 @leftClick="back">
         </bui-header>
 
-        <div style="padding: 10px">
-            <text class="h4">横向单选</text>
-            <bui-radio v-model="selectedValue" :items="items"></bui-radio>
-            <text class="h4">垂直单选</text>
-            <bui-radio v-model="selectedValue" @change="changeValue" direction="vertical" :items="items"></bui-radio>
+        <div style="padding: 10px;flex: 1">
+            <scroller>
+                <text class="h4">横向单选</text>
+                <bui-radio v-model="selectedValue" :items="items"></bui-radio>
+                <text style="margin-top: 50px;" class="h4">垂直单选(文字右边)</text>
+                <bui-radio v-model="selectedValue" @change="changeValue" direction="vertical" :items="items"></bui-radio>
+                <text style="margin-top: 50px;" class="h4">垂直单选(文字左边)</text>
+                <bui-radio-list v-model="selectedValue" @change="changeValue" :items="items"></bui-radio-list>
+                <text style="margin-top: 50px;" class="h4">单选场景案例</text>
+                <text style="text-align: center;background-color: #ff9900;padding: 30px;border-radius: 10px;color: #fff;" @click="open1()">弹出层单选列表</text>
+            </scroller>
         </div>
+        <bui-popup v-model="showPopup1" height="400">
+            <scroller style="padding: 20px;">
+                <div style="flex-direction: row;">
+                    <text style="flex: 9;font-size:30px;color: #888888">请选择下列选项</text>
+                    <text style="margin-bottom: 20px;flex: 1;text-align: right;color: #03A9F4" @click="confirm">确定</text>
+                </div>
+                <bui-radio-list v-model="selectedValue" @change="changeValue" :items="items"></bui-radio-list>
+            </scroller>
+        </bui-popup>
     </div>
 </template>
 
@@ -28,6 +43,8 @@
                 leftItem: {
                     icon: 'ion-chevron-left'
                 },
+                showPopup1: false,
+                changevalue: '',
                 selectedValue:"2",
                 items:[
                     {value:"1",title:'全部'},
@@ -41,8 +58,16 @@
             back() {
                 this.$pop();
             },
+            open1() {
+                this.showPopup1 = true;
+                this.changevalue = this.selectedValue;
+            },
             changeValue(value){
                 this.$toast(value);
+            },
+            confirm(){
+                this.$toast(JSON.stringify(this.changevalue));
+                this.showPopup1 = false;
             }
         }
     }

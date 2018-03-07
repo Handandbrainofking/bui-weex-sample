@@ -28,6 +28,7 @@
                 <bui-panel title="Danger Panel" type="danger" border="1">
                     <text>Danger Panel</text>
                 </bui-panel>
+
         </scroller>
     </div>
 
@@ -40,12 +41,46 @@
                 leftItem: {
                     icon: 'ion-chevron-left'
                 },
+                testData1: [
+                    {
+                        'title': '云应用平台'
+                    },
+                    {
+                        'title': '云应用产品',
+                        'selected': true
+                    },
+                    {
+                        'title': '轨道交通'
+                    },
+                    {
+                        'title': '轨道交通'
+                    },
+                    {
+                        'title': '财政'
+                    },
+                    {
+                        'title': '人力资源'
+                    },
+                    {
+                        'title': '最多展示两行内容'
+                    },
+                    {
+                        'title': '超过两行文本将被截断展示'
+                    },
+                    {
+                        'title': '超过两行文本将被截断展示'
+                    },
+                    {
+                        'title': '轨道交通'
+                    },
+                ],
             }
         },
         methods: {
             back() {
                 this.$pop();
             }
+
         }
     }
 </script>

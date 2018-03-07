@@ -11,10 +11,10 @@
             <bui-button type="warning" value="打开下拉菜单" @click="open"></bui-button>
         </div>
 
-        <bui-dropdown v-model="showDropdown" ref="dropdown" :center=true>
-            <bui-cell @cellClick="cellClick" title="娱乐新闻"></bui-cell>
-            <bui-cell @cellClick="cellClick" title="体育新闻"></bui-cell>
-            <bui-cell @cellClick="cellClick" title="社交媒体"></bui-cell>
+        <bui-dropdown ref="dropdown" :center=true>
+            <bui-cell @click="cellClick" title="娱乐新闻"></bui-cell>
+            <bui-cell @click="cellClick" title="体育新闻"></bui-cell>
+            <bui-cell @click="cellClick" title="社交媒体"></bui-cell>
         </bui-dropdown>
 
         <div class="center" style="padding: 10px">
@@ -42,7 +42,6 @@
                 leftItem: {
                     icon: 'ion-chevron-left'
                 },
-                showDropdown: false,
                 showUp:false
             }
         },
@@ -51,7 +50,6 @@
                 this.$pop();
             },
             open(event) {
-                this.showDropdown = true;
                 this.$refs.dropdown.show(event);
             },
             openUp(event){
@@ -61,7 +59,6 @@
                 this.$refs.dropdown.hide();
             },
             centerClick(e){
-                this.showDropdown = true;
                 this.$refs.dropdown.show(e);
             }
         }

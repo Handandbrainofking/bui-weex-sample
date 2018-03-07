@@ -67,7 +67,8 @@
                     {name: "懒加载(bui-lazy-render)", text: "", url: "lazy-render-demo.weex.js"},
                     {name: "轮播图片(bui-image-slider)", text: "", url: "slider-demo.weex.js"},
                     {name: "搜索框(bui-searchbar)", text: "", url: "searchbar-demo.weex.js"},
-                    {name: "富文本(bui-richcell)",text:"",url:"richcell-demo.weex.js"}
+                    {name: "富文本(bui-richcell)",text:"",url:"richcell-demo.weex.js"},
+                    {name: "多格筛选(bui-grid-select)",text:"",url:"grid-select-demo.weex.js"},
                 ]
             }
         },
