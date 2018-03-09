@@ -69,6 +69,7 @@
                     {name: "搜索框(bui-searchbar)", text: "", url: "searchbar-demo.weex.js"},
                     {name: "富文本(bui-richcell)",text:"",url:"richcell-demo.weex.js"},
                     {name: "多格筛选(bui-grid-select)",text:"",url:"grid-select-demo.weex.js"},
+                    {name: "流程图(bui-flow)",text:"",url:"flow-demo.weex.js"},
                 ]
             }
         },

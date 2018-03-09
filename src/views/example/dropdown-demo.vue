@@ -24,6 +24,11 @@
          <div class="center" style="padding: 10px">
             <bui-button type="warning" value="打开上拉菜单" @click="openUp"></bui-button>
         </div>
+        <bui-dropdown ref="upshows" :center=true>
+            <bui-cell @click="cellClick" title="娱乐新闻"></bui-cell>
+            <bui-cell @click="cellClick" title="体育新闻"></bui-cell>
+            <bui-cell @click="cellClick" title="社交媒体"></bui-cell>
+        </bui-dropdown>
 
         <bui-popupshow v-model="showUp" ref="upshow">
             <bui-cell  title="娱乐新闻"></bui-cell>
@@ -53,7 +58,7 @@
                 this.$refs.dropdown.show(event);
             },
             openUp(event){
-                this.showUp = true;
+                this.$refs.upshows.show(event);
             },
             cellClick(){
                 this.$refs.dropdown.hide();

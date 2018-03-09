@@ -30,6 +30,20 @@
                         :items="testData3"
                         :customStyles="customStyles"
                         @select="_click3"></bui-grid-select>
+                <text style="margin-top: 50px;margin-bottom: 20px;background-color: #f8f8f8;padding: 8px;" class="h4">三列布局</text>
+                <bui-grid-select
+                        :cols="3"
+                        :customStyles="customStyles2"
+                        :single=true
+                        :items="testData4"
+                        @select="_click3"></bui-grid-select>
+                <text style="margin-top: 50px;margin-bottom: 20px;background-color: #f8f8f8;padding: 8px;" class="h4">两列布局</text>
+                <bui-grid-select
+                        :cols="2"
+                        :customStyles="customStyles3"
+                        :single=true
+                        :items="testData5"
+                        @select="_click3"></bui-grid-select>
             </scroller>
         </div>
 
@@ -138,6 +152,69 @@
                         'title': '展示一行'
                     },
                 ],
+                testData4: [
+                    {
+                        'title': '云应用平台'
+                    },
+                    {
+                        'title': '云应用产品',
+                        'selected': true
+                    },
+                    {
+                        'title': '轨道交通'
+                    },
+                    {
+                        'title': '轨道交通'
+                    },
+                    {
+                        'title': '财政'
+                    },
+                    {
+                        'title': '人力资源'
+                    },
+                    {
+                        'title': '展示一行'
+                    },
+                    {
+                        'title': '超过一行文本将被截断展示'
+                    },
+                    {
+                        'title': '超过一行文本将被截断展示'
+                    },
+                    {
+                        'title': '轨道交通'
+                    },
+                ],
+                testData5: [
+                    {
+                        'title': '云应用平台'
+                    },
+                    {
+                        'title': '云应用产品',
+                        'selected': true
+                    },
+                    {
+                        'title': '轨道交通'
+                    },
+                    {
+                        'title': '轨道交通'
+                    },
+                    {
+                        'title': '财政'
+                    },
+                    {
+                        'title': '人力资源'
+                    },
+                    {
+                        'title': '展示一行'
+                    },
+                    {
+                        'title': '超过一行文本将被截断展示'
+                    },
+                    {
+                        'title': '轨道交通'
+                    },
+                ],
                 customStyles: {
                     lineSpacing: '20px',
                     width: '130px',
@@ -150,6 +227,12 @@
                     selectedBorderColor: '#3399ff',
                     backgroundColor: '#ffffff',
                     selectedBackgroundColor: '#3399ff'
+                },
+                customStyles2 : {
+                    width: '235px',
+                },
+                customStyles3 : {
+                    width: '360px',
                 }
             }
         },
