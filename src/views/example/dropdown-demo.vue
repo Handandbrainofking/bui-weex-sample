@@ -8,33 +8,44 @@
         </bui-header>
 
         <div class="center" style="padding: 10px">
-            <bui-button type="warning" value="打开下拉菜单" @click="open"></bui-button>
+            <bui-button type="warning" value="气泡向下菜单(箭头居中)" @click="open"></bui-button>
         </div>
 
-        <bui-dropdown ref="dropdown" :center=true>
+        <bui-dropdown ref="dropdown" :center=true @hide="_hide">
             <bui-cell @click="cellClick" title="娱乐新闻"></bui-cell>
             <bui-cell @click="cellClick" title="体育新闻"></bui-cell>
             <bui-cell @click="cellClick" title="社交媒体"></bui-cell>
         </bui-dropdown>
 
         <div class="center" style="padding: 10px">
-            <bui-button type="warning" value="打开下拉菜单" @click="open"></bui-button>
+            <bui-button type="warning" value="气泡向下菜单(箭头居左)" @click="open2"></bui-button>
         </div>
 
-         <div class="center" style="padding: 10px">
-            <bui-button type="warning" value="打开上拉菜单" @click="openUp"></bui-button>
-        </div>
-        <bui-dropdown ref="upshows" :center=true>
+        <bui-dropdown ref="dropdown2">
             <bui-cell @click="cellClick" title="娱乐新闻"></bui-cell>
             <bui-cell @click="cellClick" title="体育新闻"></bui-cell>
             <bui-cell @click="cellClick" title="社交媒体"></bui-cell>
         </bui-dropdown>
 
-        <bui-popupshow v-model="showUp" ref="upshow">
-            <bui-cell  title="娱乐新闻"></bui-cell>
-            <bui-cell  title="体育新闻"></bui-cell>
-            <bui-cell  title="体育新闻"></bui-cell>
-        </bui-popupshow>
+        <div class="center" style="padding: 10px">
+            <bui-button type="warning" value="气泡向下菜单(箭头居左宽度固定)" @click="open3"></bui-button>
+        </div>
+
+        <bui-dropdown ref="dropdown3" :autoWidth=false>
+            <bui-cell @click="cellClick" title="娱乐新闻"></bui-cell>
+            <bui-cell @click="cellClick" title="体育新闻"></bui-cell>
+            <bui-cell @click="cellClick" title="社交媒体"></bui-cell>
+        </bui-dropdown>
+
+         <div class="center" style="padding: 10px">
+            <bui-button type="warning" value="气泡向上菜单" :up=true @click="openUp"></bui-button>
+        </div>
+        <bui-dropdown ref="upshows" :up="true" :center=true>
+            <bui-cell @click="cellClick" title="娱乐新闻"></bui-cell>
+            <bui-cell @click="cellClick" title="体育新闻"></bui-cell>
+            <bui-cell @click="cellClick" title="社交媒体"></bui-cell>
+        </bui-dropdown>
+
     </div>
 </template>
 
@@ -57,8 +68,17 @@
             open(event) {
                 this.$refs.dropdown.show(event);
             },
+            _hide(){
+                this.showUp = false;
+            },
+            open2(event){
+                this.$refs.dropdown2.show(event);
+            },
+            open3(event){
+                this.$refs.dropdown3.show(event);
+            },
             openUp(event){
-                this.$refs.upshows.show(event);
+                this.$refs.upshows.show(event, 323);
             },
             cellClick(){
                 this.$refs.dropdown.hide();
