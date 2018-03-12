@@ -10,11 +10,11 @@
             <scroller>
                 <text class="h4">横向多选</text>
                 <bui-checkbox v-model="selectedValue" :items="items"></bui-checkbox>
-                <text style="margin-top: 50px;" class="h4">垂直多选(右边文字)</text>
+                <text class="h4 mT50">垂直多选(右边文字)</text>
                 <bui-checkbox v-model="selectedValue" @change="changeValue"  direction="vertical" :items="items"></bui-checkbox>
-                <text style="margin-top: 50px;" class="h4">垂直多选(左边文字)</text>
+                <text class="h4 mT50">垂直多选(左边文字)</text>
                 <bui-checkbox-list v-model="selectedValue" @change="changeValue" :items="items"></bui-checkbox-list>
-                <text style="margin-top: 50px;" class="h4">多选场景案例</text>
+                <text class="h4 mT50">多选场景案例</text>
                 <text style="text-align: center;background-color: #ff9900;padding: 30px;border-radius: 10px;color: #fff;" @click="open1()">弹出层多选列表</text>
             </scroller>
         </div>
@@ -31,9 +31,15 @@
 </template>
 
 <style lang="sass" src="bui-weex/src/css/buiweex.scss"></style>
-
-<style>
-
+<style scoped>
+    .titleEx{
+        margin-bottom: 20px;
+        background-color: #f8f8f8;
+        padding: 8px;
+    }
+    .mT50{
+        margin-top: 50px;
+    }
 </style>
 
 <script>

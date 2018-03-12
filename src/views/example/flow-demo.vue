@@ -9,23 +9,27 @@
 
         <div style="padding: 10px;flex:1">
             <scroller>
-                <text class="h4" style="margin-bottom: 20px;background-color: #f8f8f8;padding: 8px;">含标题、描述、时间的流程图</text>
-                <bui-flow
-                        :items="testData"></bui-flow>
-                <text style="margin-top: 50px;margin-bottom: 20px;background-color: #f8f8f8;padding: 8px;" class="h4">可只显示标题，也支持显示多个高亮</text>
-                <bui-flow
-                        :items="testData2"></bui-flow>
-                <text style="margin-top: 50px;margin-bottom: 20px;background-color: #f8f8f8;padding: 8px;" class="h4">可配置主题色(默认-标题、截点、线的颜色, 高亮-标题、截点颜色)</text>
+                <text class="h4 titleEx">含标题、描述、时间的流程图</text>
                 <bui-flow
                         :items="testData"
-                        :customStyles="customStyles"></bui-flow>
-                <text style="margin-top: 50px;margin-bottom: 20px;background-color: #f8f8f8;padding: 8px;" class="h4">场景1-与弹出框结合案例</text>
+                        @click="_click"></bui-flow>
+                <text class="h4 titleEx mT50">可只显示标题，也支持显示多个高亮</text>
+                <bui-flow
+                        :items="testData2"
+                        @click="_click"></bui-flow>
+                <text class="h4 titleEx mT50">可配置主题色(默认-标题、截点、线的颜色, 高亮-标题、截点颜色)</text>
+                <bui-flow
+                        :items="testData"
+                        :customStyles="customStyles"
+                        @click="_click2"></bui-flow>
+                <text class="h4 titleEx mT50">场景1-与弹出框结合案例</text>
                 <text style="text-align: center;background-color: #ff9900;padding: 30px;border-radius: 10px;color: #fff;" @click="showDialog=true">弹出框流程图</text>
 
-                <text style="margin-top: 50px;margin-bottom: 20px;background-color: #f8f8f8;padding: 8px;" class="h4">场景2-支持流程图数据更新案例</text>
+                <text class="h4 titleEx mT50">场景2-支持流程图数据更新案例</text>
                 <text style="text-align: center;background-color: #ff9900;padding: 30px;border-radius: 10px;color: #fff;" @click="update = !update">点击数据更新</text>
                 <bui-flow
-                        :items="update ? testData : testData.slice(0,2)"></bui-flow>
+                        :items="update ? testData : testData.slice(0,2)"
+                        @click="_click3"></bui-flow>
             </scroller>
         </div>
         <bui-dialog v-model="showDialog"
@@ -35,7 +39,8 @@
                     :top="'100px'"
                     @btnClick="showDialog=false">
             <bui-flow
-                    :items="testData"></bui-flow>
+                    :items="testData"
+                    @click="_click4"></bui-flow>
         </bui-dialog>
 
 
@@ -43,6 +48,16 @@
 </template>
 
 <style lang="sass" src="bui-weex/src/css/buiweex.scss"></style>
+<style scoped>
+    .titleEx{
+        margin-bottom: 20px;
+        background-color: #f8f8f8;
+        padding: 8px;
+    }
+    .mT50{
+        margin-top: 50px;
+    }
+</style>
 
 <script>
     export default {
@@ -112,13 +127,16 @@
                 this.$pop();
             },
             _click(e){
-                this.$toast(e.selectedList[0].title);
+                this.$toast(e);
             },
             _click2(e){
-                this.$toast(this.testData2[e.selectIndex].title);
+                this.$toast(e);
             },
             _click3(e){
-                this.$toast(this.testData3[e.selectIndex].title);
+                this.$toast(e);
+            },
+            _click4(e){
+                this.$toast(e);
             },
             overLimit(e){
                 this.$toast(`最多选择${e}个`);

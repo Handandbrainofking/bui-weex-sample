@@ -9,35 +9,35 @@
 
         <div style="padding: 10px;flex:1">
             <scroller>
-                <text class="h4" style="margin-bottom: 20px;background-color: #f8f8f8;padding: 8px;">单选</text>
+                <text class="h4 titleEx">单选</text>
                 <bui-grid-select
                         :items="testData1"
                         :single=true
                         @overLimit="onOverLimit"
                         @select="_click">
                 </bui-grid-select>
-                <text style="margin-top: 50px;margin-bottom: 20px;background-color: #f8f8f8;padding: 8px;" class="h4">多选</text>
+                <text class="h4 titleEx mT50">多选</text>
                 <bui-grid-select
                         :items="testData2"
                         :limit="3"
                         @overLimit="overLimit"
                         @select="_click2">
                 </bui-grid-select>
-                <text style="margin-top: 50px;margin-bottom: 20px;background-color: #f8f8f8;padding: 8px;" class="h4">自定义样式(默认、选中的边框颜色,背景颜色,字体颜色。选中的图标,宽高)</text>
+                <text class="h4 titleEx mT50">自定义样式(默认、选中的边框颜色,背景颜色,字体颜色。选中的图标,宽高)</text>
                 <bui-grid-select
                         :cols="5"
                         :single=true
                         :items="testData3"
                         :customStyles="customStyles"
                         @select="_click3"></bui-grid-select>
-                <text style="margin-top: 50px;margin-bottom: 20px;background-color: #f8f8f8;padding: 8px;" class="h4">三列布局</text>
+                <text class="h4 titleEx mT50">三列布局</text>
                 <bui-grid-select
                         :cols="3"
                         :customStyles="customStyles2"
                         :single=true
                         :items="testData4"
                         @select="_click3"></bui-grid-select>
-                <text style="margin-top: 50px;margin-bottom: 20px;background-color: #f8f8f8;padding: 8px;" class="h4">两列布局</text>
+                <text class="h4 titleEx mT50">两列布局</text>
                 <bui-grid-select
                         :cols="2"
                         :customStyles="customStyles3"
@@ -52,7 +52,16 @@
 </template>
 
 <style lang="sass" src="bui-weex/src/css/buiweex.scss"></style>
-
+<style scoped>
+    .titleEx{
+        margin-bottom: 20px;
+        background-color: #f8f8f8;
+        padding: 8px;
+    }
+    .mT50{
+        margin-top: 50px;
+    }
+</style>
 <script>
     export default {
         data: function () {

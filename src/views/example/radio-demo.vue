@@ -10,11 +10,11 @@
             <scroller>
                 <text class="h4">横向单选</text>
                 <bui-radio v-model="selectedValue" :items="items"></bui-radio>
-                <text style="margin-top: 50px;" class="h4">垂直单选(文字右边)</text>
+                <text class="h4 mT50">垂直单选(文字右边)</text>
                 <bui-radio v-model="selectedValue" @change="changeValue" direction="vertical" :items="items"></bui-radio>
-                <text style="margin-top: 50px;" class="h4">垂直单选(文字左边)</text>
+                <text class="h4 mT50">垂直单选(文字左边)</text>
                 <bui-radio-list v-model="selectedValue" @change="changeValue" :items="items"></bui-radio-list>
-                <text style="margin-top: 50px;" class="h4">单选场景案例</text>
+                <text class="h4 mT50">单选场景案例</text>
                 <text style="text-align: center;background-color: #ff9900;padding: 30px;border-radius: 10px;color: #fff;" @click="open1()">弹出层单选列表</text>
             </scroller>
         </div>
@@ -31,9 +31,15 @@
 </template>
 
 <style lang="sass" src="bui-weex/src/css/buiweex.scss"></style>
-
-<style>
-
+<style scoped>
+    .titleEx{
+        margin-bottom: 20px;
+        background-color: #f8f8f8;
+        padding: 8px;
+    }
+    .mT50{
+        margin-top: 50px;
+    }
 </style>
 
 <script>
