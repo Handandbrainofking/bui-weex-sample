@@ -25,6 +25,7 @@
                 <loading-indicator class="bui-indicator"></loading-indicator>
             </loading>
         </list>
+
     </div>
 
 </template>
@@ -85,7 +86,7 @@
                         }
                     }
                 }, 2000);
-            }
+            },
         }
     }
 </script>

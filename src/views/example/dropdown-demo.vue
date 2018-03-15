@@ -11,7 +11,7 @@
             <bui-button type="warning" value="气泡向下菜单(箭头居中)" @click="open"></bui-button>
         </div>
 
-        <bui-dropdown ref="dropdown" :center=true @hide="_hide">
+        <bui-dropdown ref="dropdown" :center=true>
             <bui-cell @click="cellClick" title="娱乐新闻"></bui-cell>
             <bui-cell @click="cellClick" title="体育新闻"></bui-cell>
             <bui-cell @click="cellClick" title="社交媒体"></bui-cell>
@@ -31,20 +31,21 @@
             <bui-button type="warning" value="气泡向下菜单(箭头居左宽度固定)" @click="open3"></bui-button>
         </div>
 
-        <bui-dropdown ref="dropdown3" :autoWidth=false>
+        <bui-dropdown ref="dropdown3">
             <bui-cell @click="cellClick" title="娱乐新闻"></bui-cell>
             <bui-cell @click="cellClick" title="体育新闻"></bui-cell>
             <bui-cell @click="cellClick" title="社交媒体"></bui-cell>
         </bui-dropdown>
 
          <div class="center" style="padding: 10px">
-            <bui-button type="warning" value="气泡向上菜单" :up=true @click="openUp"></bui-button>
+            <bui-button type="warning" value="气泡向上菜单" @click="openUp"></bui-button>
         </div>
         <bui-dropdown ref="upshows" :up="true" :center=true>
             <bui-cell @click="cellClick" title="娱乐新闻"></bui-cell>
             <bui-cell @click="cellClick" title="体育新闻"></bui-cell>
             <bui-cell @click="cellClick" title="社交媒体"></bui-cell>
         </bui-dropdown>
+
 
     </div>
 </template>
@@ -68,9 +69,6 @@
             open(event) {
                 this.$refs.dropdown.show(event);
             },
-            _hide(){
-                this.showUp = false;
-            },
             open2(event){
                 this.$refs.dropdown2.show(event);
             },
@@ -81,11 +79,8 @@
                 this.$refs.upshows.show(event, 323);
             },
             cellClick(){
-                this.$refs.dropdown.hide();
+                this.$refs.upshows.hide();
             },
-            centerClick(e){
-                this.$refs.dropdown.show(e);
-            }
         }
     }
 </script>

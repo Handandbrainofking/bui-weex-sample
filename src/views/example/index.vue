@@ -49,6 +49,7 @@
                     {name: "面板(bui-panel)", text: "", url: "panel-demo.weex.js"},
                     {name: "头部(bui-header)", text: "", url: "header-demo.weex.js"},
                     {name: "列表(bui-list)", text: "", url: "list-demo-pullrefresh.weex.js"},
+                    {name: "滑动菜单(bui-swipe-menu)", text: "", url: "swipe-menu-demo.weex.js"},
                     {name: "选项卡(bui-tabbar)", text: "", url: "tabbar-demo.weex.js"},
                 ],
                 form:[
