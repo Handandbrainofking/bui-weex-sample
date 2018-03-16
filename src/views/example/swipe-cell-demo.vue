@@ -9,26 +9,28 @@
 
         <div style="padding: 10px;flex: 1">
             <scroller>
-                <text class="h4 titleEx">简单滑动菜单-手势向左边滑动</text>
-                <bui-swipe-menu :items="btnAry1"
-                                :title="'品高好声音'"></bui-swipe-menu>
-                <text class="h4 titleEx mT50">滑动菜单-菜单按钮操作</text>
-                <bui-swipe-menu @clickmenu="clickmenu"
+                <text class="h4 titleEx">简单滑动菜单-手势向左边滑动,菜单按钮操作</text>
+                <bui-swipe-cell @clickmenu="clickmenu"
                                 :items="btnAry1"
-                                :title="'品高好声音'"></bui-swipe-menu>
+                                :title="'阿农之家'"></bui-swipe-cell>
+                <text class="h4 titleEx mT50">滑动菜单-高度设置</text>
+                <bui-swipe-cell @clickmenu="clickmenu"
+                                :height="'150px'"
+                                :items="btnAry1"
+                                :title="'千手观音剁手'"></bui-swipe-cell>
                 <text class="h4 titleEx mT50">场景1-组件扩展案例</text>
-                <bui-swipe-menu :items="btnAry1"
-                                :title="'品高好声音'">
-                    <text slot="title">--扩展部分--</text>
-                </bui-swipe-menu>
+                <bui-swipe-cell :items="btnAry1"
+                                :title="'樊登读书会'">
+                    <text slot="content">--扩展部分--</text>
+                </bui-swipe-cell>
                 <text class="h4 titleEx mT50">场景2-与列表结合案例</text>
                 <div v-for="(i, index) in items" :key="index">
-                    <bui-swipe-menu :items="btnAry"
+                    <bui-swipe-cell :items="btnAry"
                                     :title="i.title"
                                     :index="index"
                                     ref="swipebtn"
                                     @swipe="setkey"
-                                    @click="closeswipe"></bui-swipe-menu>
+                                    @click="closeswipe"></bui-swipe-cell>
                 </div>
             </scroller>
         </div>
@@ -88,7 +90,7 @@
                         'title':'柠檬'
                     },
                     {
-                        'title':'品高'
+                        'title':'樊登读书会'
                     },
                     {
                         'title':'云应用平台'
@@ -112,11 +114,11 @@
                 }
             },
             setkey(e){
-                if(this.indexkey.length != 0 && this.indexkey != e) this.$refs.swipebtn[this.indexkey-0]._close();
+                if(this.indexkey.length != 0 && this.indexkey != e) this.$refs.swipebtn[this.indexkey-0].close();
                 this.indexkey = e;
             },
             closeswipe(){
-                this.$refs.swipebtn[this.indexkey-0]._close();
+                this.$refs.swipebtn[this.indexkey-0].close();
             }
 
         }
