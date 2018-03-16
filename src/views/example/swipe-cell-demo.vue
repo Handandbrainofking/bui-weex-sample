@@ -10,11 +10,11 @@
         <div style="padding: 10px;flex: 1">
             <scroller>
                 <text class="h4 titleEx">简单滑动菜单-手势向左边滑动,菜单按钮操作</text>
-                <bui-swipe-cell @clickmenu="clickmenu"
+                <bui-swipe-cell @actionClick="clickmenu"
                                 :items="btnAry1"
                                 :title="'阿农之家'"></bui-swipe-cell>
                 <text class="h4 titleEx mT50">滑动菜单-高度设置</text>
-                <bui-swipe-cell @clickmenu="clickmenu"
+                <bui-swipe-cell @actionClick="clickmenu"
                                 :height="'150px'"
                                 :items="btnAry1"
                                 :title="'千手观音剁手'"></bui-swipe-cell>
@@ -26,11 +26,7 @@
                 <text class="h4 titleEx mT50">场景2-与列表结合案例</text>
                 <div v-for="(i, index) in items" :key="index">
                     <bui-swipe-cell :items="btnAry"
-                                    :title="i.title"
-                                    :index="index"
-                                    ref="swipebtn"
-                                    @swipe="setkey"
-                                    @click="closeswipe"></bui-swipe-cell>
+                                    :title="i.title"></bui-swipe-cell>
                 </div>
             </scroller>
         </div>
@@ -95,8 +91,7 @@
                     {
                         'title':'云应用平台'
                     }
-                ],
-                indexkey: '',
+                ]
             }
         },
         components: {},
@@ -112,13 +107,6 @@
                 }else if(e == 1){
                     this.$toast(this.btnAry1[e-0].title);
                 }
-            },
-            setkey(e){
-                if(this.indexkey.length != 0 && this.indexkey != e) this.$refs.swipebtn[this.indexkey-0].close();
-                this.indexkey = e;
-            },
-            closeswipe(){
-                this.$refs.swipebtn[this.indexkey-0].close();
             }
 
         }
