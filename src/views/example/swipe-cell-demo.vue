@@ -12,16 +12,16 @@
                 <text class="h4 titleEx">简单滑动菜单-手势向左边滑动,菜单按钮操作</text>
                 <bui-swipe-cell @actionClick="clickmenu"
                                 :items="btnAry1"
-                                :title="'阿农之家'"></bui-swipe-cell>
+                                :title="'腾讯新闻-今日头条'"></bui-swipe-cell>
                 <text class="h4 titleEx mT50">滑动菜单-高度设置</text>
                 <bui-swipe-cell @actionClick="clickmenu"
                                 :height="'150px'"
                                 :items="btnAry1"
-                                :title="'千手观音剁手'"></bui-swipe-cell>
+                                :title="'腾讯新闻-今日头条'"></bui-swipe-cell>
                 <text class="h4 titleEx mT50">场景1-组件扩展案例</text>
                 <bui-swipe-cell :items="btnAry1"
-                                :title="'樊登读书会'">
-                    <text slot="content">--扩展部分--</text>
+                                :title="'腾讯新闻-今日头条'">
+                    <text slot="content">--腾讯新闻-今日头条--</text>
                 </bui-swipe-cell>
                 <text class="h4 titleEx mT50">场景2-与列表结合案例</text>
                 <div v-for="(i, index) in items" :key="index">
@@ -80,16 +80,16 @@
                 ],
                 items: [
                     {
-                        'title':'行无止尽'
+                        'title':'腾讯新闻'
                     },
                     {
-                        'title':'柠檬'
+                        'title':'网易新闻'
                     },
                     {
-                        'title':'樊登读书会'
+                        'title':'新浪微博'
                     },
                     {
-                        'title':'云应用平台'
+                        'title':'搜狐门户'
                     }
                 ]
             }
