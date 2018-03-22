@@ -20,8 +20,11 @@
                                 :title="'腾讯新闻-今日头条'"></bui-swipe-cell>
                 <text class="h4 titleEx mT50">场景1-组件扩展案例</text>
                 <bui-swipe-cell :items="btnAry1"
-                                :title="'腾讯新闻-今日头条'">
-                    <text slot="content">--腾讯新闻-今日头条--</text>
+                                :title="'腾讯新闻-今日头条'"
+                                @click="fn">
+                    <div slot="content">
+                        <text>--腾讯新闻-今日头条--</text>
+                    </div>
                 </bui-swipe-cell>
                 <text class="h4 titleEx mT50">场景2-与列表结合案例</text>
                 <div v-for="(i, index) in items" :key="index">
@@ -99,6 +102,10 @@
         methods: {
             back() {
                 this.$pop();
+            },
+
+            fn(){
+                this.$toast('点击click');
             },
 
             clickmenu(e){
