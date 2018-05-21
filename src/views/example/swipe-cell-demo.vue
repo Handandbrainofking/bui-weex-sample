@@ -22,20 +22,9 @@
                 <bui-swipe-cell :items="btnAry1"
                                 :title="'腾讯新闻-今日头条'"
                                 @click="fn">
-                    <template slot="action" title="action" style="flex-direction: row">
-                        <div class="bui-list-swipe-btn" style="background-color: #ff9900;width:120px">
-                            <text class="bui-list-swipe-btn-text">ssss</text>
-                        </div>
-                        <div class="bui-list-swipe-btn" style="background-color: #ff9900;width:120px">
-                            <text class="bui-list-swipe-btn-text">ssss</text>
-                        </div>
-                        <div class="bui-list-swipe-btn" style="background-color: #ff9900;width:120px">
-                            <text class="bui-list-swipe-btn-text">ssss</text>
-                        </div>
-                    </template>
-                    <div slot="content">
+                    <template slot="content">
                         <text>--腾讯新闻-今日头条--</text>
-                    </div>
+                    </template>
                 </bui-swipe-cell>
                 <text class="h4 titleEx mT50">场景2-与列表结合案例</text>
                 <div v-for="(i, index) in items" :key="index">
