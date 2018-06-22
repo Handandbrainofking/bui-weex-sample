@@ -2,7 +2,7 @@
     <div>
         <bui-header title="选项卡(bui-tabbar-scrollor)" :leftItem="leftItem" @leftClick="back"></bui-header>
 
-        <bui-tabbar-scrollor :tabs="tabItems" selectedBackground="#F77845" selectedColor="#ffffff" @change="onItemChange" v-model="currentTab"></bui-tabbar-scrollor>
+        <bui-tabbar-scroller :tabs="tabItems" selectedBackground="#F77845" selectedColor="#ffffff" @change="onItemChange" v-model="currentTab"></bui-tabbar-scroller>
         <slider class="slider" @change="onSliderChange" :index="currentTab">
             <div class="slider-item">
                <text class="h1">tab0</text>
