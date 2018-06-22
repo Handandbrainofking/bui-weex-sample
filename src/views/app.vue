@@ -1,5 +1,5 @@
 <template>
-    <div class="center">
+    <div class="flex-column center">
         <bui-image src="/image/logo.png" width="244px" height="172px"></bui-image>
         <text class="h2">BUI-Weex</text>
         <text class="h4">专注为Weex前端开发者提供高质量UI组件</text>

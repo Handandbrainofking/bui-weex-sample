@@ -11,9 +11,9 @@
                 <text class="h4">横向单选</text>
                 <bui-radio v-model="selectedValue" :items="items"></bui-radio>
                 <text class="h4 mT50">垂直单选(文字右边)</text>
-                <bui-radio v-model="selectedValue" @change="changeValue" direction="vertical" :items="items"></bui-radio>
+                <bui-radio disabled=true v-model="selectedValue" @change="changeValue" direction="vertical" :items="items"></bui-radio>
                 <text class="h4 mT50">垂直单选(文字左边)</text>
-                <bui-radio-list v-model="selectedValue" @change="changeValue" :items="items"></bui-radio-list>
+                <bui-radio textDirection="left" direction="vertical" v-model="selectedValue" :items="items"></bui-radio>
                 <text class="h4 mT50">单选场景案例</text>
                 <text style="text-align: center;background-color: #ff9900;padding: 30px;border-radius: 10px;color: #fff;" @click="open1()">弹出层单选列表</text>
             </scroller>
@@ -24,7 +24,7 @@
                     <text style="flex: 9;font-size:30px;color: #888888">请选择下列选项</text>
                     <text style="margin-bottom: 20px;flex: 1;text-align: right;color: #03A9F4" @click="confirm">确定</text>
                 </div>
-                <bui-radio-list v-model="selectedValue" @change="changeValue" :items="items"></bui-radio-list>
+                <bui-radio textDirection="left" direction="vertical" v-model="selectedValue" :items="items"></bui-radio>
             </scroller>
         </bui-popup>
     </div>

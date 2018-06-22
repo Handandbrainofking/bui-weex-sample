@@ -13,7 +13,7 @@
             <bui-button class="ex-btn" type="success" value="Success" @click="btnEvent"></bui-button>
             <bui-button class="ex-btn" type="warning" value="Warning" @click="btnEvent"></bui-button>
             <bui-button class="ex-btn" type="danger" value="Danger" @click="btnEvent"></bui-button>
-            <bui-button class="ex-btn" disabled=true   value="Disabled" @click="btnEvent"></bui-button>
+            <bui-button class="ex-btn" disabled=true value="Disabled" @click="btnEvent"></bui-button>
             <bui-button class="ex-btn" type="text" value="Text Button" @click="btnEvent"></bui-button>
 
             <bui-button class="ex-btn" value="Button" type="highlight" @click="btnEvent">

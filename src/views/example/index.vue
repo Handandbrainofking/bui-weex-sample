@@ -51,6 +51,9 @@
                     {name: "列表(bui-list)", text: "", url: "list-demo-pullrefresh.weex.js"},
                     {name: "滑动菜单(bui-swipe-cell)", text: "", url: "swipe-cell-demo.weex.js"},
                     {name: "选项卡(bui-tabbar)", text: "", url: "tabbar-demo.weex.js"},
+                    {name: "选项卡(bui-tabbar-scrollor)", text: "", url: "tabbar-scrollor-demo.weex.js"},
+                    {name: "选项卡(bui-ep-slider)", text: "", url: "ep-slider-demo.weex.js"},
+                    {name: "选项卡(bui-timeline)", text: "", url: "timeline-demo.weex.js"},
                 ],
                 form:[
                     {name: "单元格(bui-cell)", text: "", url: "cell-demo.weex.js"},

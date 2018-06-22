@@ -70,8 +70,8 @@
                 showDialog: false,
                 testData: [
                     {
-                        'date': '2017-05-24 21:10:29',
-                        'desc': '结束',
+                        // 'date': '2017-05-24 21:10:29',
+                        // 'desc': '结束',
                         'highlight': true,
                         'title': '页面交互输出'
                     },
