@@ -1,6 +1,6 @@
 <template>
     <div>
-        <bui-header title="选项卡(bui-tabbar-scrollor)" :leftItem="leftItem" @leftClick="back"></bui-header>
+        <bui-header title="流程图-布局可扩展(bui-timeline)" :leftItem="leftItem" @leftClick="back"></bui-header>
         <div style="padding: 10px;flex:1">
             <scroller>
                 <bui-timeline>

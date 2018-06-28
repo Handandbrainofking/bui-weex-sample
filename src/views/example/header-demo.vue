@@ -13,7 +13,8 @@
             <bui-header style="margin-bottom: 20px" :title="'开发者中心'"
                         backgroundColor="#00cc66"
                         :leftItem="leftItem"
-                        :rightItem="rightMenu">
+                        :rightItem="rightMenu"
+                        :useDefaultReturn=false>
             </bui-header>
             <bui-header
                     style="margin-bottom: 20px"
@@ -25,7 +26,6 @@
                     style="margin-bottom: 20px"
                     backgroundColor="#ff4e24"
                     title="新闻标题很长很长很长很长很长"
-                    :leftItem="leftMenu1"
                     :rightItem="rightMenu1">
             </bui-header>
 

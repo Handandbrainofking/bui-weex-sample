@@ -74,6 +74,7 @@
                     {name: "富文本(bui-richcell)",text:"",url:"richcell-demo.weex.js"},
                     {name: "多格筛选(bui-grid-select)",text:"",url:"grid-select-demo.weex.js"},
                     {name: "流程图(bui-flow)",text:"",url:"flow-demo.weex.js"},
+                    {name: "标签(bui-tag)",text:"",url:"tag-demo.weex.js"},
                 ]
             }
         },
@@ -83,7 +84,7 @@
         methods: {
             jumpTo (file) {
                 if (file) {
-                    var url = this.$getContextPath() + "/" + file;
+                    var url = file;
                     this.$push(url);
                 }
             },
