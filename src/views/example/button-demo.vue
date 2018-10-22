@@ -26,7 +26,7 @@
     </div>
 </template>
 
-<style lang="sass" src="bui-weex/src/css/buiweex.scss"></style>
+<style lang="scss" src="bui-weex/src/css/buiweex.scss"></style>
 
 <style>
     .ex-btn {

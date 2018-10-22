@@ -2,10 +2,13 @@
     <div>
         <bui-header title="选项卡(bui-tabbar-scroller)" :leftItem="leftItem" @leftClick="back"></bui-header>
 
-        <bui-tabbar-scroller :tabs="tabItems" selectedBackground="#F77845" selectedColor="#ffffff" @change="onItemChange" v-model="currentTab"></bui-tabbar-scroller>
+        <bui-tabbar-scroller :tabs="tabItems" :tabStyle="tabStyle" selectedBackground="#F77845" selectedColor="#ffffff" @change="onItemChange" v-model="currentTab"></bui-tabbar-scroller>
         <slider class="slider" @change="onSliderChange" :index="currentTab">
             <div class="slider-item">
-               <text class="h1">tab0</text>
+              <div class="type-info_column">
+                  <div class="type-info_ratio"></div>
+                  <text>111</text>
+              </div>
             </div>
             <div class="slider-item">
                 <text class="h1">tab1</text>
@@ -16,11 +19,17 @@
             <div class="slider-item">
                 <text class="h1">tab3</text>
             </div>
+            <div class="slider-item">
+                <text class="h1">tab3</text>
+            </div>
+            <div class="slider-item">
+                <text class="h1">tab3</text>
+            </div>
         </slider>
     </div>
 </template>
 
-<style lang="sass" src="bui-weex/src/css/buiweex.scss"></style>
+<style lang="scss" src="bui-weex/src/css/buiweex.scss"></style>
 <style>
     .slider{
         flex:1;
@@ -30,8 +39,27 @@
         justify-content: center;
         align-items: center;
     }
+    .type-info_column{
+        position: relative;
+        width : 100px;
+        height: 100px;
+        margin-right: 24px;
+        background-color: #f1f1f1;
+
+
+
+    }
+    .type-info_ratio{
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 100px;
+        height : 2px;
+        background-color: #0088fb;
+    }
 </style>
 <script>
+    const animation = weex.requireModule('animation');
     module.exports = {
         data: function () {
             return {
@@ -39,6 +67,9 @@
                     icon: 'ion-chevron-left'
                 },
                 currentTab:1,
+                tabStyle: {
+                    backgroundColor: "#000"
+                },
                 tabItems: [
                     {
                         title: "首页1",
@@ -72,12 +103,25 @@
                 this.$pop();
             },
             onItemChange(index){
-
             },
             onSliderChange(e){
                 var index = e.index;
                 this.currentTab=index;
-            }
+            },
+
+        },
+        mounted: function(){
+            animation.transition(el, {
+                styles: {
+                    transform: translate,
+                    transformOrigin: 'center center'
+                },
+                duration: 200,
+                timingFunction: "ease-in",
+                delay: 0
+            }, () => {
+                fn && fn();
+            })
         }
     }
 </script>

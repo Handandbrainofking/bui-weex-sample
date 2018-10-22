@@ -10,10 +10,10 @@
             <scroller>
                 <text class="h4">横向单选</text>
                 <bui-radio v-model="selectedValue" :items="items"></bui-radio>
-                <text class="h4 mT50">垂直单选(文字右边)</text>
-                <bui-radio disabled=true v-model="selectedValue" @change="changeValue" direction="vertical" :items="items"></bui-radio>
+                <text class="h4 mT50" @click="reset">垂直单选(文字右边)</text>
+                <bui-radio v-model="selectedValue1" :textStyles="textStyles" iconSize="30" fontSize="30" :containerStyle="containerStyle" direction="vertical" selectedColor="#FF943B" @selected="changeValue" :items="items1"></bui-radio>
                 <text class="h4 mT50">垂直单选(文字左边)</text>
-                <bui-radio textDirection="left" direction="vertical" v-model="selectedValue" :items="items"></bui-radio>
+                <bui-radio textDirection="left" direction="vertical" @selected="changeValue" v-model="selectedValue" :items="items"></bui-radio>
                 <text class="h4 mT50">单选场景案例</text>
                 <text style="text-align: center;background-color: #ff9900;padding: 30px;border-radius: 10px;color: #fff;" @click="open1()">弹出层单选列表</text>
             </scroller>
@@ -30,7 +30,7 @@
     </div>
 </template>
 
-<style lang="sass" src="bui-weex/src/css/buiweex.scss"></style>
+<style lang="scss" src="bui-weex/src/css/buiweex.scss"></style>
 <style scoped>
     .titleEx{
         margin-bottom: 20px;
@@ -52,13 +52,38 @@
                 showPopup1: false,
                 changevalue: '',
                 selectedValue:"2",
+                selectedValue1:"2",
                 items:[
+                    {value:"1",title:'全部'},
+                    {value:"2",title:'选项一sfsdfsdfsdfsdfsdf djsdfsdjfks dj sdfksd fsdjfsdjfksdfksdfk k  dsfsdfk fdskjfsdjfsdf sdf sdfsdfj '},
+                    {value:"3",title:'选项二'},
+                    {value:"4",title:'选项三'}
+                ],
+                items1:[
                     {value:"1",title:'全部'},
                     {value:"2",title:'选项一'},
                     {value:"3",title:'选项二'},
                     {value:"4",title:'选项三'}
                 ]
             }
+        },
+        computed :{
+            textStyles(){
+                return {
+                    marginLeft : '30px'
+                }
+            },
+            containerStyle(){
+                return {
+                    paddingLeft : '20px',
+                    paddingRight : '20px',
+                    paddingTop : '30px',
+                    paddingBottom : '30px',
+                    borderBottomColor : '#f2f2f2',
+                    borderBottomWidth : '1px',
+                    borderBottomStyle : 'solid',
+                }
+            },
         },
         methods: {
             back() {
@@ -68,12 +93,18 @@
                 this.showPopup1 = true;
                 this.changevalue = this.selectedValue;
             },
-            changeValue(value){
-                this.$toast(value);
+            changeValue(value, index){
+                // this.$toast(value);
+                // this.$toast(index);
+                this.selectedValue1 = value;
             },
             confirm(){
                 this.$toast(JSON.stringify(this.changevalue));
                 this.showPopup1 = false;
+            },
+            reset(){
+                debugger;
+                this.selectedValue1 = '';
             }
         }
     }
