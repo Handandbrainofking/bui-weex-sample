@@ -48,11 +48,9 @@
                     {name: "提示(bui-tip)", text: "", url: "tip-demo.js"},
                     {name: "面板(bui-panel)", text: "", url: "panel-demo.js"},
                     {name: "头部(bui-header)", text: "", url: "header-demo.js"},
-                    {name: "列表(bui-list)", text: "", url: "list-demo-pullrefresh.js"},
                     {name: "滑动菜单(bui-swipe-cell)", text: "", url: "swipe-cell-demo.js"},
                     {name: "选项卡(bui-tabbar)", text: "", url: "tabbar-demo.js"},
                     {name: "选项卡(bui-tabbar-scroller)", text: "", url: "tabbar-scroller-demo.js"},
-                    {name: "选项卡(bui-ep-slider)", text: "", url: "ep-slider-demo.js"},
                     {name: "选项卡(bui-timeline)", text: "", url: "timeline-demo.js"},
                 ],
                 form:[

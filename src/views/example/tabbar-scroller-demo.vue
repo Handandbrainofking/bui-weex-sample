@@ -5,10 +5,7 @@
         <bui-tabbar-scroller :tabs="tabItems" :tabStyle="tabStyle" selectedBackground="#F77845" selectedColor="#ffffff" @change="onItemChange" v-model="currentTab"></bui-tabbar-scroller>
         <slider class="slider" @change="onSliderChange" :index="currentTab">
             <div class="slider-item">
-              <div class="type-info_column">
-                  <div class="type-info_ratio"></div>
-                  <text>111</text>
-              </div>
+                <text class="h1">tab0</text>
             </div>
             <div class="slider-item">
                 <text class="h1">tab1</text>
@@ -36,11 +33,11 @@
     }
     .slider-item{
         width: 750px;
-        justify-content: center;
+        /*justify-content: center;*/
         align-items: center;
     }
     .type-info_column{
-        position: relative;
+        /*position: relative;*/
         width : 100px;
         height: 100px;
         margin-right: 24px;
@@ -68,7 +65,7 @@
                 },
                 currentTab:1,
                 tabStyle: {
-                    backgroundColor: "#000"
+                    // backgroundColor: "#000"
                 },
                 tabItems: [
                     {

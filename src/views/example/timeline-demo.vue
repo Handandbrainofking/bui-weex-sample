@@ -45,11 +45,15 @@
     export default {
         data: function () {
             return {
-
+                leftItem: {
+                    icon: 'ion-chevron-left'
+                }
             }
         },
         methods: {
-
+            back() {
+                this.$pop();
+            },
         },
         created(){
 
