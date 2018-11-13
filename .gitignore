@@ -19,5 +19,7 @@
 /.temp
 /release
 /platforms
+/src/entry/weex
+/src/entry/web
 
 package-lock.json
