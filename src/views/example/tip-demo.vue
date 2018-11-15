@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="span1">
         <bui-header
                 title="提示(bui-tip)"
                 :leftItem="leftItem"
@@ -16,6 +16,7 @@
     </div>
 
 </template>
+<style lang="scss" src="bui-weex/src/css/buiweex.scss"></style>
 
 <script>
     export default {

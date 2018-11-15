@@ -73,6 +73,7 @@
                     {name: "多格筛选(bui-grid-select)",text:"",url:"grid-select-demo.js"},
                     {name: "流程图(bui-flow)",text:"",url:"flow-demo.js"},
                     {name: "标签(bui-tag)",text:"",url:"tag-demo.js"},
+                    {name: "路由(router)",text:"",url:"index.router.js"},
                 ]
             }
         },
