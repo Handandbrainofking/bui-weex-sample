@@ -1,14 +1,12 @@
 <template>
     <div class="flex-column center">
-        <bui-image src="/image/logo.png" width="150px" height="150px"></bui-image>
-        <text class="h2">BUI-Weex</text>
+        <!-- <weex-image src="/image/logo.png" width="150px" height="150px"></weex-image> -->
+        <text class="h2">Weex</text>
         <text class="h4">专注为Weex前端开发者提供高质量UI组件</text>
-        <bui-button type="primary" value="快速体验" @click="jumpTo"></bui-button>
+        <!-- <weex-button type="primary" value="快速体验" @click="jumpTo"></weex-button> -->
 
     </div>
 </template>
-
-<style lang="scss" src="bui-weex/src/css/buiweex.scss"></style>
 
 <script>
     const globalEvent = weex.requireModule('globalEvent');
@@ -54,3 +52,9 @@
         }
     }
 </script>
+
+<style lang="sass" scoped>
+@import "../css/common.css"
+</style>
+
+

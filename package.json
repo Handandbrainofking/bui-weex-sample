@@ -1,7 +1,7 @@
 {
-  "name": "bui-weex-sample",
-  "description": "bui-weex sample project",
-  "version": "1.0.15",
+  "name": "weex-sample",
+  "description": "weex template project",
+  "version": "0.0.1",
   "main": "",
   "keywords": [
     "weex",
@@ -10,12 +10,12 @@
   "author": "BingoSoft",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bingo-oss/bui-weex-template.git"
+    "url": ""
   },
   "bugs": {
-    "url": "https://github.com/bingo-oss/bui-weex-template/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/bingo-oss/bui-weex-template",
+  "homepage": "",
   "scripts": {
     "start": "npm run serve",
     "build": "webpack --env.NODE_ENV=common",
@@ -24,6 +24,7 @@
     "build:plugin": "webpack --env.NODE_ENV=plugin",
     "clean:web": "rimraf ./release/web",
     "clean:ios": "rimraf ./release/ios",
+    "clean:all": "rimraf ./.temp && rimraf ./dist && rimraf ./release",
     "clean:android": "rimraf ./release/android",
     "dev": "webpack --env.NODE_ENV=common --progress --watch",
     "serve": "webpack-dev-server --env.NODE_ENV=development --progress",
